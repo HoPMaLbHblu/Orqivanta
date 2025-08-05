@@ -1,0 +1,26 @@
+# Local services for Orqivanta development. Everything here is free and runs offline.
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: orqivanta_owner
+      POSTGRES_PASSWORD: orqivanta_owner
+      POSTGRES_DB: orqivanta
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U orqivanta_owner -d orqivanta']
+      interval: 5s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports:
+      - '1025:1025' # SMTP
+      - '8025:8025' # Web inbox at http://localhost:8025
+
+volumes:
+  pgdata:

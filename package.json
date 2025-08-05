@@ -1,0 +1,26 @@
+{
+  "name": "orqivanta",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "test:e2e": "pnpm --filter @orqivanta/web test:e2e",
+    "db:generate": "pnpm --filter @orqivanta/db generate",
+    "db:migrate": "pnpm --filter @orqivanta/db migrate",
+    "db:seed": "pnpm --filter @orqivanta/db seed",
+    "demo:reset": "pnpm --filter @orqivanta/db demo:reset",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "turbo": "2.5.8",
+    "typescript": "5.9.3"
+  }
+}
