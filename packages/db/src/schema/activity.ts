@@ -257,3 +257,22 @@ export const emailLog = pgTable('email_log', {
   error: text('error'),
   createdAt: createdAt(),
 });
+
+export const exportStatus = pgEnum('export_status', ['queued', 'ready', 'failed']);
+
+/** Organization data exports, produced by the worker and downloadable for 7 days. */
+export const dataExports = pgTable(
+  'data_exports',
+  {
+    id: id(),
+    orgId: orgId().references(() => organizations.id, { onDelete: 'cascade' }),
+    requestedBy: uuid('requested_by').references(() => users.id, { onDelete: 'set null' }),
+    status: exportStatus('status').notNull().default('queued'),
+    storageKey: text('storage_key'),
+    sizeBytes: integer('size_bytes'),
+    error: text('error'),
+    createdAt: createdAt(),
+    completedAt: ts('completed_at'),
+  },
+  (t) => [index('data_exports_org_idx').on(t.orgId, t.createdAt)],
+);

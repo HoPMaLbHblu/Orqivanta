@@ -119,7 +119,8 @@ export const files = pgTable(
   {
     id: id(),
     orgId: orgId(),
-    projectId: uuid('project_id').notNull(),
+    /** Null only for attachments on requests that aren't linked to a project yet. */
+    projectId: uuid('project_id'),
     /** Optional owning task (attachments). Requests store attachments with requestId. */
     taskId: uuid('task_id'),
     requestId: uuid('request_id'),
@@ -152,6 +153,7 @@ export const files = pgTable(
       foreignColumns: [tasks.orgId, tasks.id],
     }).onDelete('cascade'),
     check('files_single_owner', sql`num_nonnulls(${t.taskId}, ${t.requestId}) <= 1`),
+    check('files_has_parent', sql`num_nonnulls(${t.projectId}, ${t.requestId}) >= 1`),
   ],
 );
 

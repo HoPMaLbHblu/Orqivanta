@@ -58,4 +58,5 @@ export const TENANT_TABLES = [
   'favorites',
   'recent_items',
   'saved_views',
+  'data_exports',
 ] as const;
