@@ -9,9 +9,9 @@
   },
   "scripts": {
     "generate": "drizzle-kit generate",
-    "migrate": "tsx src/migrate.ts",
-    "seed": "tsx src/seed/run.ts",
-    "demo:reset": "tsx src/seed/run.ts --reset",
+    "migrate": "tsx --env-file-if-exists=../../.env src/migrate.ts",
+    "seed": "tsx --env-file-if-exists=../../.env src/seed/run.ts",
+    "demo:reset": "tsx --env-file-if-exists=../../.env src/seed/run.ts --reset",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit"
   },
