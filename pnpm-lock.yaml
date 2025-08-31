@@ -60,6 +60,9 @@ importers:
       nodemailer:
         specifier: 7.0.6
         version: 7.0.6
+      sharp:
+        specifier: 0.34.4
+        version: 0.34.4
       zod:
         specifier: 4.1.11
         version: 4.1.11
@@ -70,6 +73,9 @@ importers:
       '@types/nodemailer':
         specifier: 7.0.1
         version: 7.0.1
+      tsx:
+        specifier: 4.20.6
+        version: 4.20.6
       typescript:
         specifier: 5.9.3
         version: 5.9.3

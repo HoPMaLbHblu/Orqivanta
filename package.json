@@ -14,8 +14,8 @@
     "test:e2e": "pnpm --filter @orqivanta/web test:e2e",
     "db:generate": "pnpm --filter @orqivanta/db generate",
     "db:migrate": "pnpm --filter @orqivanta/db migrate",
-    "db:seed": "pnpm --filter @orqivanta/db seed",
-    "demo:reset": "pnpm --filter @orqivanta/db demo:reset",
+    "db:seed": "pnpm --filter @orqivanta/core demo:reset",
+    "demo:reset": "pnpm --filter @orqivanta/core demo:reset",
     "format": "prettier --write ."
   },
   "devDependencies": {
