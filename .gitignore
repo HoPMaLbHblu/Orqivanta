@@ -7,6 +7,7 @@ coverage
 .env
 .env.local
 .storage
+.storage-test
 playwright-report
 test-results
 .DS_Store

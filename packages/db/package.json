@@ -5,13 +5,12 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./schema": "./src/schema/index.ts"
+    "./schema": "./src/schema/index.ts",
+    "./migrate": "./src/migrate.ts"
   },
   "scripts": {
     "generate": "drizzle-kit generate",
     "migrate": "tsx --env-file-if-exists=../../.env src/migrate.ts",
-    "seed": "tsx --env-file-if-exists=../../.env src/seed/run.ts",
-    "demo:reset": "tsx --env-file-if-exists=../../.env src/seed/run.ts --reset",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit"
   },
