@@ -1,0 +1,19 @@
+{
+  "priority": { "none": "No priority", "low": "Low", "medium": "Medium", "high": "High", "urgent": "Urgent" },
+  "statusCategory": { "backlog": "Backlog", "unstarted": "To do", "started": "In progress", "review": "In review", "completed": "Done", "canceled": "Canceled" },
+  "requestStatus": { "submitted": "New", "in_review": "In review", "needs_info": "Needs info", "accepted": "Accepted", "in_progress": "In progress", "completed": "Completed", "declined": "Declined", "duplicate": "Duplicate" },
+  "requestStatusClient": { "submitted": "Received", "in_review": "Being reviewed", "needs_info": "Waiting on you", "accepted": "Accepted", "in_progress": "In progress", "completed": "Done", "declined": "Declined", "duplicate": "Merged" },
+  "approvalStatus": { "pending": "Awaiting review", "approved": "Approved", "changes_requested": "Changes requested", "rejected": "Rejected", "canceled": "Canceled", "superseded": "Replaced by newer round" },
+  "decision": { "approved": "Approved", "changes_requested": "Requested changes", "rejected": "Rejected" },
+  "health": { "on_track": "On track", "at_risk": "At risk", "off_track": "Off track", "computedHint": "Estimated from overdue and blocked work. Post an update to set it yourself." },
+  "orgRole": { "owner": "Owner", "admin": "Admin", "member": "Member", "client": "Client contact" },
+  "projectRole": { "manager": "Manager", "contributor": "Contributor", "viewer": "Viewer", "client": "Client" },
+  "visibility": { "org": "Everyone in the organization", "team": "Team only", "private": "Members only" },
+  "projectStatus": { "active": "Active", "paused": "Paused", "completed": "Completed" },
+  "milestoneStatus": { "planned": "Planned", "in_progress": "In progress", "done": "Done", "missed": "Missed" },
+  "documentKind": { "page": "Page", "spec": "Spec", "meeting_notes": "Meeting notes", "decision": "Decision", "brief": "Brief" },
+  "fileKind": { "attachment": "Attachment", "deliverable": "Deliverable" },
+  "rule": { "all": "Everyone must approve", "any": "Any one reviewer can approve" },
+  "notificationCategory": { "assignment": "Assignments", "mention": "Mentions", "comment": "Comments", "status": "Status changes", "approval": "Approvals", "request": "Requests", "due": "Due dates", "membership": "Membership" },
+  "fieldType": { "short_text": "Short text", "long_text": "Long text", "select": "Choice", "date": "Date", "url": "Link", "number": "Number" }
+}
