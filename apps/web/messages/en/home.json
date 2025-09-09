@@ -1,0 +1,27 @@
+{
+  "title": "Home",
+  "greeting": { "morning": "Good morning, {name}", "afternoon": "Good afternoon, {name}", "evening": "Good evening, {name}" },
+  "summary": "Your work at a glance",
+  "tiles": {
+    "assigned": { "label": "Assigned to you", "definition": "Open tasks assigned to you, excluding done, canceled and archived work." },
+    "overdue": { "label": "Overdue", "definition": "Your open tasks whose due date is before today." },
+    "dueThisWeek": { "label": "Due in 7 days", "definition": "Your open tasks due today or in the next seven days." },
+    "reviews": { "label": "Reviews waiting", "definition": "Approval rounds where you are a reviewer and haven’t decided yet." },
+    "requests": { "label": "Your open requests", "definition": "Client and team requests you own that aren’t closed." }
+  },
+  "upNext": "Up next",
+  "upNextHint": "Your open tasks, soonest due first.",
+  "openMyWork": "Open my work",
+  "noUpcoming": "Nothing assigned to you",
+  "noUpcomingHint": "Tasks assigned to you will show up here.",
+  "reviewsWaiting": "Waiting for your review",
+  "reviewsHint": "Reviewers decide on an exact version of the work.",
+  "recentActivity": "Recent activity",
+  "yourProjects": "Your projects",
+  "allProjects": "All projects",
+  "progressOf": "Progress of {name}",
+  "overdueCount": "{count} overdue",
+  "noProjects": "No projects yet",
+  "noProjectsHint": "Projects you’re part of, or star, appear here.",
+  "createProject": "Create a project"
+}

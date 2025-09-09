@@ -63,3 +63,13 @@ export async function setSessionCookie(token: string, expiresAt: Date) {
 export async function clearSessionCookie() {
   (await cookies()).delete(SESSION_COOKIE);
 }
+
+/** For server actions and route handlers: the actor, or an UNAUTHENTICATED / NOT_FOUND error. */
+export async function actorFor(orgSlug: string): Promise<OrgActor> {
+  const { AppError } = await import('@orqivanta/core');
+  const session = await getSession();
+  if (!session) throw new AppError('UNAUTHENTICATED', 'Your session has ended. Sign in again to continue.');
+  const actor = await resolveActor(session.user.id, orgSlug);
+  if (!actor) throw new AppError('NOT_FOUND', 'That organization doesn’t exist or you no longer have access to it.');
+  return actor;
+}
