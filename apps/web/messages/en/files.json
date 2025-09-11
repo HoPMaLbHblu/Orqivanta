@@ -1,0 +1,14 @@
+{
+  "upload": {
+    "dropHere": "Drop files here or",
+    "browse": "browse",
+    "limits": "Images, PDFs, Office documents, ZIP, video and text files up to 25 MB.",
+    "progress": "Uploading {name}",
+    "failed": "The upload failed.",
+    "network": "The connection dropped. Try again.",
+    "cancel": "Cancel upload",
+    "canceled": "Canceled",
+    "retry": "Retry upload",
+    "dismiss": "Dismiss"
+  }
+}
