@@ -2,6 +2,7 @@ import 'server-only';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import type { Locale } from './config';
+import { lookupServerMessage } from './server-message-lookup';
 
 const cache = new Map<string, Record<string, string>>();
 
@@ -17,4 +18,11 @@ export async function loadServerMessages(locale: Locale): Promise<Record<string,
   } catch {
     return {};
   }
+}
+
+/** For server components: translates English domain text (errors, notification titles, definitions). */
+export async function getServerMessageTranslator() {
+  const { getLocale } = await import('next-intl/server');
+  const map = await loadServerMessages((await getLocale()) as Locale);
+  return (message: string | null | undefined) => (message ? lookupServerMessage(map, message) : '');
 }

@@ -19,6 +19,8 @@ const securityHeaders = [
 
 const config: NextConfig = {
   reactStrictMode: true,
+  // Lets several dev servers share one checkout without clobbering each other's build output.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   poweredByHeader: false,
   // Workspace packages ship TypeScript source.
   transpilePackages: ['@orqivanta/core', '@orqivanta/db'],

@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useContext, type ReactNode } from 'react';
+import { lookupServerMessage } from '@/i18n/server-message-lookup';
 
 /**
  * Domain services report errors in English. For other languages the app ships a table of
@@ -17,7 +18,7 @@ export function useServerMessage() {
   return useCallback(
     (message: string | undefined | null) => {
       if (!message) return '';
-      return map[message] ?? message;
+      return lookupServerMessage(map, message);
     },
     [map],
   );
