@@ -1,0 +1,52 @@
+{
+  "title": "Set up your workspace",
+  "eyebrow": "Getting started",
+  "intro": "Four short steps. You can leave and come back — your progress is saved.",
+  "checklist": "Setup steps",
+  "completed": "completed",
+  "continue": "Continue",
+  "optional": "(optional)",
+  "step": {
+    "organization": {
+      "name": "Organization",
+      "title": "Name your organization",
+      "body": "This is the workspace your team and clients will see."
+    },
+    "template": {
+      "name": "Starting template",
+      "title": "Pick a starting point",
+      "body": "Templates add milestones and a few starter tasks to your first project. You can change everything later."
+    },
+    "teammates": {
+      "name": "Teammates",
+      "title": "Invite your team",
+      "body": "Invitations are emailed and expire after 7 days. You can skip this and invite people later from Settings."
+    },
+    "project": {
+      "name": "First project",
+      "title": "Create your first project",
+      "body": "Projects hold tasks, documents, files, requests and approvals."
+    }
+  },
+  "orgName": "Organization name",
+  "purpose": "What kind of team is this?",
+  "purposeChoose": "Choose one",
+  "createWorkspace": "Create workspace",
+  "emails": "Email addresses",
+  "emailsHint": "One or more, separated by commas, spaces or new lines.",
+  "role": "Role",
+  "roleMember": "Member",
+  "roleAdmin": "Admin",
+  "sendInvites": "{count, plural, =0 {Send invitations} one {Send 1 invitation} other {Send # invitations}}",
+  "invited": "{count, plural, one {Invitation sent} other {# invitations sent}}",
+  "skipForNow": "Skip for now",
+  "projectName": "Project name",
+  "projectPlaceholder": "e.g. {org} website",
+  "projectKey": "Key",
+  "projectKeyHint": "2–6 letters, used in task IDs like ATL-12.",
+  "template": "Template",
+  "createProject": "Create project",
+  "finishLater": "Finish later",
+  "alreadyHave": "Already set up?",
+  "goToWorkspace": "Go to {name}"
+}

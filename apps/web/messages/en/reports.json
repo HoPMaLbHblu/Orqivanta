@@ -1,0 +1,179 @@
+{
+  "title": "Reports",
+  "description": "How work is flowing across the projects you can see.",
+  "note": "These reports describe the flow of work, not individual performance. Counts of tasks or comments don’t measure anyone’s productivity.",
+  "noAccess": "Reports aren’t available for your role.",
+  "allReports": "All reports",
+  "openReport": "Open report",
+  "report": {
+    "progress": {
+      "title": "Project progress",
+      "summary": "How far along each active project is, and its health.",
+      "chart": "Progress by project",
+      "xLabel": "Progress (%)"
+    },
+    "overdue": {
+      "title": "Overdue work",
+      "summary": "Open tasks past their due date, by project.",
+      "chart": "Overdue tasks by project",
+      "xLabel": "Overdue tasks"
+    },
+    "throughput": {
+      "title": "Throughput",
+      "summary": "Tasks completed per week.",
+      "chart": "Tasks completed per week",
+      "xLabel": "Week starting",
+      "yLabel": "Tasks completed"
+    },
+    "cycle-time": {
+      "title": "Cycle time",
+      "summary": "How long tasks take from start to done.",
+      "chart": "Cycle time in days",
+      "xLabel": "Days"
+    },
+    "request-response": {
+      "title": "Request response time",
+      "summary": "How quickly the team responds to and resolves requests.",
+      "chart": "Open requests by category",
+      "xLabel": "Open requests"
+    },
+    "approval-turnaround": {
+      "title": "Approval turnaround",
+      "summary": "How long reviews take and how they end.",
+      "chart": "Review outcomes in the period",
+      "xLabel": "Reviews"
+    }
+  },
+  "headline": {
+    "progress": "{count, plural, one {# active project} other {# active projects}}",
+    "overdue": "{count, plural, one {# overdue task} other {# overdue tasks}}",
+    "throughput": "{count, plural, one {# task completed} other {# tasks completed}}",
+    "cycle-time": "{value} median",
+    "request-response": "{value} median first response",
+    "approval-turnaround": "{value} median turnaround",
+    "noData": "Not enough data yet"
+  },
+  "range": {
+    "label": "Date range",
+    "from": "From",
+    "to": "To",
+    "apply": "Apply",
+    "preset": "Last {days} days",
+    "custom": "Custom range",
+    "project": "Project",
+    "allProjects": "All projects",
+    "showing": "{from} – {to}",
+    "snapshot": "Snapshot as of today. The date range doesn’t apply to this report."
+  },
+  "exportCsv": "Download CSV",
+  "chart": "Chart",
+  "table": "Table",
+  "tableCaption": "{title}: data table",
+  "definitions": "How these numbers are measured",
+  "metrics": {
+    "progress": {
+      "label": "Progress",
+      "definition": "Completed tasks divided by all tasks that weren’t canceled, including subtasks. Archived and deleted tasks are excluded. A project with no tasks shows no progress rather than 0%."
+    },
+    "overdue": {
+      "label": "Overdue",
+      "definition": "Open tasks (not completed or canceled) whose due date is before today. “Today” uses UTC on the server and your time zone in reports."
+    },
+    "blocked": {
+      "label": "Blocked",
+      "definition": "Open tasks with at least one blocking task that is still open."
+    },
+    "health": {
+      "label": "Health",
+      "definition": "The latest status update a manager posted. Without one, it’s computed: off track if the project is past its due date with open work; at risk if 20% or more of open tasks are overdue or blocked; otherwise on track."
+    },
+    "throughput": {
+      "label": "Throughput",
+      "definition": "Tasks moved to a completed status, per week (Monday to Sunday in your time zone). A task completed, reopened and completed again counts once, in the week of its latest completion."
+    },
+    "cycleTime": {
+      "label": "Cycle time",
+      "definition": "Median days from when work started (first move to an in-progress status, or creation if it skipped that) to completion, for tasks completed in the period."
+    },
+    "requestResponse": {
+      "label": "First response",
+      "definition": "Median hours from a request being submitted to the team’s first response: a status change, a client-visible reply, or conversion into work."
+    },
+    "requestResolution": {
+      "label": "Time to resolution",
+      "definition": "Median days from submission to being completed, declined or marked duplicate, for requests closed in the period."
+    },
+    "approvalTurnaround": {
+      "label": "Approval turnaround",
+      "definition": "Median hours from a review being requested to its final outcome, for reviews decided in the period. Canceled and superseded rounds are excluded."
+    },
+    "revisionRounds": {
+      "label": "Revision rounds",
+      "definition": "Average number of review rounds per deliverable before approval. A new round starts when a new file version reopens review."
+    }
+  },
+  "tiles": {
+    "completed": "Tasks completed",
+    "weeklyAverage": "Weekly average",
+    "median": "Median",
+    "p85": "85th percentile",
+    "sample": "Tasks in sample",
+    "submitted": "Requests submitted",
+    "resolved": "Requests resolved",
+    "firstResponse": "Median first response",
+    "resolution": "Median time to resolution",
+    "decided": "Reviews decided",
+    "turnaround": "Median turnaround",
+    "pending": "Awaiting review now",
+    "rounds": "Average revision rounds",
+    "activeProjects": "Active projects",
+    "atRisk": "At risk or off track",
+    "overdueTotal": "Overdue tasks",
+    "openTotal": "Open tasks"
+  },
+  "units": {
+    "days": "{value, plural, one {# day} other {# days}}",
+    "hours": "{value} h",
+    "daysShort": "{value} d",
+    "pct": "{value}%"
+  },
+  "noValue": "—",
+  "columns": {
+    "project": "Project",
+    "key": "Key",
+    "client": "Client",
+    "health": "Health",
+    "progress_pct": "Progress",
+    "open": "Open",
+    "overdue": "Overdue",
+    "blocked": "Blocked",
+    "due_date": "Due",
+    "overdue_share_pct": "Share overdue",
+    "week_starting": "Week starting",
+    "completed": "Completed",
+    "measure": "Measure",
+    "days": "Days",
+    "category": "Category",
+    "submitted": "New",
+    "in_review": "In review",
+    "needs_info": "Needs info",
+    "accepted": "Accepted",
+    "in_progress": "In progress",
+    "total_open": "Total open",
+    "outcome": "Outcome",
+    "reviews": "Reviews"
+  },
+  "measure": {
+    "median": "Median",
+    "p85": "85th percentile",
+    "tasks_completed": "Tasks completed (sample)"
+  },
+  "empty": {
+    "progress": "No active projects in this view.",
+    "overdue": "Nothing is overdue. Nice.",
+    "throughput": "No tasks were completed in this period.",
+    "cycle-time": "No tasks were completed in this period, so there’s no cycle time to show.",
+    "request-response": "No open requests right now.",
+    "approval-turnaround": "No reviews were decided in this period."
+  }
+}

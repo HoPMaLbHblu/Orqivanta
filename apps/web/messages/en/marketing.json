@@ -1,0 +1,570 @@
+{
+  "nav": {
+    "label": "Main",
+    "product": "Product",
+    "clientPortal": "Client portal",
+    "agencies": "For agencies",
+    "pricing": "Pricing",
+    "changelog": "Changelog",
+    "signIn": "Sign in",
+    "tryDemo": "Try the demo",
+    "getStarted": "Get started",
+    "openWorkspace": "Open workspace",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "One calm place for client projects, requests and approvals.",
+    "productTitle": "Product",
+    "companyTitle": "About",
+    "legalTitle": "Legal",
+    "startTitle": "Start",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "accessibility": "Accessibility",
+    "portfolioNote": "Orqivanta is a portfolio project by an independent developer. It isn’t a registered company, it has no paying customers, and the sample studio is fictional.",
+    "copyright": "© {year} Orqivanta",
+    "preferences": "Language and theme"
+  },
+  "illustration": "Illustration with sample data",
+  "learnMore": "Learn more",
+  "mock": {
+    "board": {
+      "todo": "To do",
+      "doing": "In progress",
+      "review": "In review",
+      "t1": "Menu page photography brief",
+      "t2": "Opening hours component",
+      "t3": "Homepage hero layout",
+      "t4": "Spring opening landing page",
+      "t5": "Store locator map",
+      "design": "Design",
+      "content": "Content",
+      "dev": "Engineering",
+      "dueThu": "Thu",
+      "dueFri": "Fri",
+      "dueMon": "Mon",
+      "blocked": "Blocked",
+      "inApproval": "Approval · round 2"
+    },
+    "approval": {
+      "label": "Approval",
+      "title": "Homepage design",
+      "round": "Round 2",
+      "file": "homepage-v3.pdf",
+      "version": "Version 3 · 2.4 MB",
+      "rule": "Every reviewer must approve",
+      "approved": "Approved",
+      "waiting": "Waiting",
+      "client": "Harbor & Pine",
+      "round1": "Round 1 · version 2",
+      "changesRequested": "Changes requested",
+      "approve": "Approve",
+      "requestChanges": "Request changes",
+      "due": "Due Friday"
+    },
+    "portal": {
+      "label": "Request #12",
+      "title": "Spring opening announcement",
+      "client": "Harbor & Pine Coffee",
+      "s1": "Submitted by Hannah Cole",
+      "s2": "Priya asked: which date should we lead with?",
+      "s3": "Accepted and planned as task HPC-21",
+      "s4": "In progress",
+      "s5": "Done",
+      "now": "Now",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed"
+    },
+    "doc": {
+      "collection": "Briefs",
+      "title": "Harbor & Pine — homepage brief",
+      "saved": "Saved · version 14",
+      "h": "What the homepage must do",
+      "p": "Make the fourth café feel like part of the family, and get people to the menu in one tap.",
+      "c1": "Opening date above the fold",
+      "c2": "Menu link in the header",
+      "c3": "Accessible colour contrast"
+    }
+  },
+  "home": {
+    "metaTitle": "Orqivanta · Client work, without the chasing",
+    "metaDescription": "Projects, tasks, documents, files, client requests and approvals in one calm workspace for agencies and studios — with a portal clients understand.",
+    "eyebrow": "For agencies and studios that work with clients",
+    "title": "Client work, <em>without</em> the chasing.",
+    "lead": "Orqivanta keeps projects, tasks, documents, files, requests and approvals in one workspace — with a quiet portal where clients send requests and sign off on the exact version you shared.",
+    "ctaPrimary": "Get started",
+    "ctaDemo": "Explore a sample studio",
+    "ctaFree": "Free during the preview. No card, no trial clock.",
+    "demoNote": "Free during the preview. Every person, client and project in the sample studio is fictional.",
+    "loopEyebrow": "How work moves",
+    "loopTitle": "One thread, from brief to sign-off.",
+    "loopLead": "Most tools hold one part of client work. Orqivanta follows a piece of work all the way through, so nothing has to be copied from one place to another.",
+    "steps": {
+      "request": {
+        "title": "Request",
+        "body": "A client asks through the portal, using your intake form. Nothing arrives as a forwarded email chain."
+      },
+      "plan": {
+        "title": "Plan",
+        "body": "Triage it, then turn it into a task or a whole project. The original request stays linked, word for word."
+      },
+      "make": {
+        "title": "Make",
+        "body": "Write in documents that autosave and keep versions. Upload files with previews and a full history."
+      },
+      "review": {
+        "title": "Review",
+        "body": "Ask for approval on a specific file or document version, from one reviewer or all of them."
+      },
+      "report": {
+        "title": "Report",
+        "body": "See progress, overdue work and approval turnaround, each with a written definition of what it counts."
+      }
+    },
+    "approvals": {
+      "eyebrow": "Approvals",
+      "title": "Know exactly what was approved.",
+      "body": "Every decision is pinned to the version the reviewer saw. Upload a new version and review reopens on its own, as the next round, with the earlier decisions kept beside it.",
+      "p1": "Approve, request changes or reject, with a comment",
+      "p2": "Any reviewer or every reviewer, chosen per approval",
+      "p3": "Reminders before the due date, not after it"
+    },
+    "portal": {
+      "eyebrow": "Client portal",
+      "title": "A portal clients don’t need explained.",
+      "body": "Clients see only what you share with them, one item at a time: requests, deliverables, updates and approvals. Internal notes and other clients stay out of view, and the server enforces it.",
+      "p1": "Requests with a clear, dated timeline",
+      "p2": "“View as client” before you share anything",
+      "p3": "Each contact sees their own client account, nothing else"
+    },
+    "tasks": {
+      "eyebrow": "Tasks",
+      "title": "A board the whole team can read at a glance.",
+      "body": "List and board views over the same tasks, with subtasks, checklists, blocking dependencies and a history of every change. Drag cards with a mouse, or move them with the keyboard.",
+      "p1": "Saved views, filters and bulk edits",
+      "p2": "Mentions, watchers and an inbox that stays quiet",
+      "p3": "A stable link for every task"
+    },
+    "principlesEyebrow": "Under the surface",
+    "principlesTitle": "Built carefully, described honestly.",
+    "principles": {
+      "private": {
+        "title": "Private by default",
+        "body": "Everything starts internal. Sharing with a client is a deliberate choice, made one item at a time."
+      },
+      "server": {
+        "title": "Checked on the server",
+        "body": "Every action, search result, export and download goes through one permission engine, with row-level security in PostgreSQL behind it."
+      },
+      "conflicts": {
+        "title": "No silent overwrites",
+        "body": "Tasks, documents and approvals carry versions. If two people edit at once, you see the conflict instead of losing work."
+      },
+      "access": {
+        "title": "Accessible by design",
+        "body": "Built to WCAG 2.2 AA: a keyboard path for everything, visible focus, and status that never relies on colour alone."
+      }
+    },
+    "closingTitle": "See it with real-looking work inside.",
+    "closingBody": "The sample studio holds six weeks of fictional projects, requests and approvals. Pick a role — producer, designer or client — and look around. Nothing you change there is permanent.",
+    "closingBodyNoDemo": "Create a workspace, invite your team and set up your first client project in a few minutes.",
+    "closingSecondary": "Create your workspace",
+    "portalLink": "How the client portal works"
+  },
+  "product": {
+    "metaTitle": "Product",
+    "metaDescription": "Projects, tasks, documents, files, requests, approvals, notifications, search and reports — everything in Orqivanta’s first release, and what isn’t in it yet.",
+    "eyebrow": "Product",
+    "title": "Everything a client project needs, and <em>nothing</em> it doesn’t.",
+    "lead": "Orqivanta is one workspace for the whole delivery loop. This page lists what’s in the first release, in plain words, and what deliberately isn’t.",
+    "modulesTitle": "In the first release",
+    "modules": {
+      "projects": {
+        "title": "Projects",
+        "body": "Goals, milestones, members and health updates, with progress computed from the work itself. Archive and restore without losing history."
+      },
+      "tasks": {
+        "title": "Tasks",
+        "body": "List and board views, subtasks, checklists, labels, priorities, due dates, watchers and blocked-by dependencies. Every change lands in the task’s history."
+      },
+      "documents": {
+        "title": "Documents",
+        "body": "Rich text with collections, autosave and numbered versions. If someone else saved first, you get a conflict dialog — never a silent overwrite."
+      },
+      "files": {
+        "title": "Files",
+        "body": "Uploads with progress, retry and cancel. Versions, image and PDF previews, and private storage where every download is checked against permissions."
+      },
+      "requests": {
+        "title": "Requests",
+        "body": "Intake forms per organization, a triage inbox, clarification threads and duplicate links. Convert a request into a task or a project with its context kept."
+      },
+      "approvals": {
+        "title": "Approvals",
+        "body": "On a file version, a document version or a milestone. Reviewers, due dates, an any-or-all rule, reminders, and a decision history per round."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "body": "An inbox with read state, email notifications and per-category preferences. Changes arrive live, and missed events are replayed after a reconnect."
+      },
+      "search": {
+        "title": "Search",
+        "body": "One search and a ⌘K command palette across projects, tasks, documents, requests and clients. Results respect permissions, down to previews and counts."
+      },
+      "reports": {
+        "title": "Reports",
+        "body": "Progress, overdue work, throughput, cycle time, request response time and approval turnaround. Each chart has a table, a written definition and a CSV export."
+      },
+      "admin": {
+        "title": "Settings & admin",
+        "body": "Members, invitations, teams, clients, request forms, labels, an audit log of administrative changes, and a full data export."
+      }
+    },
+    "detailsEyebrow": "Details",
+    "detailsTitle": "Small things that add up.",
+    "details": {
+      "docs": {
+        "title": "Documents that keep their history",
+        "body": "Every save is a numbered version you can open and restore. Link a document to tasks, comment on it, and share it with a client when it’s ready."
+      },
+      "keyboard": {
+        "title": "Made for the keyboard",
+        "body": "⌘K jumps anywhere. Shortcuts are listed in-app with ?, and every drag-and-drop has a keyboard alternative."
+      },
+      "languages": {
+        "title": "English and Russian",
+        "body": "Each person picks their language, time zone and date format. Light and dark themes follow your system or your choice."
+      },
+      "live": {
+        "title": "Live, without the fragility",
+        "body": "Updates stream to every open tab after they’re saved. Lose the connection and the app catches up on what you missed when it’s back."
+      }
+    },
+    "laterTitle": "Not in this release",
+    "laterLead": "So you know what to expect: these are out of scope for now. You won’t find half-built buttons for them anywhere in the product.",
+    "later": {
+      "billing": "Billing and paid plans",
+      "ai": "AI features",
+      "sso": "Single sign-on and multi-factor sign-in",
+      "integrations": "Slack, GitHub and calendar integrations",
+      "time": "Time tracking and budgets",
+      "coedit": "Live co-editing of documents",
+      "roles": "Custom roles",
+      "public": "Public request forms and custom domains"
+    }
+  },
+  "portal": {
+    "metaTitle": "Client portal",
+    "metaDescription": "A focused portal where clients send requests, approve exact versions, collect deliverables and read updates — and never see what you haven’t shared.",
+    "eyebrow": "Client portal",
+    "title": "Give clients a window, <em>not</em> the whole house.",
+    "lead": "The portal is a focused space for the people you work for: what you’ve shared with them, what needs their decision, and where their requests stand.",
+    "doTitle": "What clients can do",
+    "do": {
+      "requests": {
+        "title": "Send requests",
+        "body": "Through the intake forms you design, with attachments. They follow each one from submitted to done, and answer your questions in its thread."
+      },
+      "approve": {
+        "title": "Approve work",
+        "body": "Review the exact file or document version, then approve, request changes or reject — with a comment that stays on record."
+      },
+      "deliverables": {
+        "title": "Collect deliverables",
+        "body": "Download what you’ve shared, with every version, from one place instead of a dozen email attachments."
+      },
+      "updates": {
+        "title": "Read updates",
+        "body": "Project updates you chose to share, in order, next to the milestones you agreed on."
+      }
+    },
+    "internalEyebrow": "Visibility",
+    "internalTitle": "What stays inside the studio.",
+    "internalBody": "Visibility is set per item, never inferred from being on a project. A client contact sees only what’s been shared with their own client account, and the server checks that on every page, search and download.",
+    "internal": {
+      "comments": "Internal comments and discussion",
+      "tasks": "Tasks, estimates and who’s working on what",
+      "unshared": "Documents and files you haven’t shared",
+      "others": "Every other client, and their work"
+    },
+    "previewTitle": "Preview before you share.",
+    "previewBody": "Every shared item has a “View as client” button that shows exactly what the client will see — the same page, with the same rules — so there are no surprises.",
+    "joinTitle": "Clients get their own door.",
+    "joinBody": "Invite a client contact by email. They set a password, sign in, and land in the portal — never in your internal workspace. Remove them and their access ends at once."
+  },
+  "agencies": {
+    "metaTitle": "For agencies",
+    "metaDescription": "Orqivanta is shaped around how agencies and studios work: client requests, versioned sign-off, clear roles and reports everyone can read.",
+    "eyebrow": "For agencies",
+    "title": "Made for studios that <em>answer</em> to clients.",
+    "lead": "Agencies juggle more than tasks: briefs that change, feedback that arrives everywhere, and sign-offs that need to stand up months later. Orqivanta is built around that.",
+    "pairsTitle": "Familiar problems, quieter answers",
+    "pairs": {
+      "feedback": {
+        "problem": "Feedback arrives everywhere.",
+        "answer": "Requests come through one portal, on your forms, and each has its own thread for clarifying questions."
+      },
+      "version": {
+        "problem": "Which version did they approve?",
+        "answer": "Decisions are pinned to the exact version reviewed, with the round number and comments beside them."
+      },
+      "status": {
+        "problem": "Status meetings that could have been a page.",
+        "answer": "Health updates, milestones and reports show where things stand, with definitions anyone can read."
+      },
+      "access": {
+        "problem": "Freelancers and clients need different access.",
+        "answer": "Project roles and client contacts see exactly what they need. Everything else stays internal until you share it."
+      }
+    },
+    "rolesEyebrow": "Roles",
+    "rolesTitle": "Roles that match how studios are organised.",
+    "rolesLead": "Three organization roles, three project roles and a client contact. Owners and admins act as managers on every project.",
+    "rolesCaption": "Who can do what",
+    "roleCol": "Role",
+    "scopeCol": "Applies to",
+    "canCol": "What they do",
+    "scopeOrg": "Organization",
+    "scopeProject": "Project",
+    "scopeClient": "Their client account",
+    "roles": {
+      "owner": {
+        "name": "Owner",
+        "can": "Everything, including deleting the organization and transferring ownership."
+      },
+      "admin": {
+        "name": "Admin",
+        "can": "Members, teams, clients, request forms and settings; acts as a manager on every project."
+      },
+      "member": {
+        "name": "Member",
+        "can": "Works in the projects they belong to, or open projects in their team."
+      },
+      "manager": {
+        "name": "Manager",
+        "can": "Plans the project, shares items with the client and triages requests."
+      },
+      "contributor": {
+        "name": "Contributor",
+        "can": "Creates and edits tasks, documents and files; asks for approvals."
+      },
+      "viewer": {
+        "name": "Viewer",
+        "can": "Reads the project and joins the discussion."
+      },
+      "client": {
+        "name": "Client contact",
+        "can": "Sends requests and decides approvals in the portal, on shared items only."
+      }
+    },
+    "weekEyebrow": "Getting started",
+    "weekTitle": "Your first week, roughly.",
+    "week": {
+      "org": {
+        "title": "Create your organization",
+        "body": "Pick a name and an address. Your workspace lives at that address, and only members can open it."
+      },
+      "template": {
+        "title": "Choose a starting template",
+        "body": "Client website, brand identity or retainer — each with starter milestones and a status workflow — or start blank."
+      },
+      "team": {
+        "title": "Invite your team",
+        "body": "Send invitations with a role. Links expire after seven days and can be revoked."
+      },
+      "client": {
+        "title": "Add a client",
+        "body": "Create the client account, invite its contacts, and connect it to a project."
+      },
+      "share": {
+        "title": "Share the first deliverable",
+        "body": "Upload it, ask for approval, and watch the decision arrive in your inbox."
+      }
+    }
+  },
+  "pricing": {
+    "metaTitle": "Pricing",
+    "metaDescription": "Orqivanta is free during the preview. No paid plans, no trial clock and no checkout.",
+    "eyebrow": "Pricing",
+    "title": "Free while it’s in <em>preview</em>.",
+    "lead": "Orqivanta is a preview and a portfolio project. There are no paid plans, no trial clock and no checkout. Everything in the first release is available to every workspace.",
+    "planName": "Preview",
+    "price": "$0",
+    "priceNote": "per workspace, for as long as the preview runs",
+    "includes": "Included",
+    "items": {
+      "all": "Every feature in the first release",
+      "portal": "Client portal with requests and approvals",
+      "people": "Your team and your clients’ contacts",
+      "reports": "Reports with tables and CSV export",
+      "storage": "1 GB of file storage per organization",
+      "export": "A full data export whenever you want one"
+    },
+    "cta": "Get started",
+    "noCard": "You’ll never be asked for card details.",
+    "faqTitle": "Questions about pricing",
+    "faq": {
+      "paid": {
+        "q": "Will Orqivanta ever be paid?",
+        "a": "There’s no plan for it today. If that ever changes, it will be announced in the changelog first, and nothing will change for existing workspaces without notice."
+      },
+      "ready": {
+        "q": "Is it ready for real client work?",
+        "a": "It’s built to a production standard, but it’s a preview: there’s no support team, no uptime commitment and no backups you should rely on. Use it to evaluate, and keep your own copies of anything important."
+      },
+      "export": {
+        "q": "Can I take my data out?",
+        "a": "Yes. Owners and admins can export the organization’s data from settings at any time."
+      },
+      "limits": {
+        "q": "What are the limits?",
+        "a": "Each organization has 1 GB of file storage, and a single file can be up to 25 MB. The limits keep a free preview sustainable."
+      },
+      "tiers": {
+        "q": "Why aren’t there future plans and prices here?",
+        "a": "Because they don’t exist. Showing nothing is more honest than inventing tiers."
+      }
+    }
+  },
+  "changelog": {
+    "metaTitle": "Changelog",
+    "metaDescription": "Release notes for Orqivanta: what changed, when, and why.",
+    "eyebrow": "Changelog",
+    "title": "What’s new.",
+    "lead": "Release notes for every meaningful change, newest first. Dates are when a change landed in the main branch.",
+    "tags": {
+      "new": "New",
+      "improved": "Improved",
+      "fixed": "Fixed"
+    },
+    "version": "Version {version}"
+  },
+  "about": {
+    "metaTitle": "About",
+    "metaDescription": "Why Orqivanta exists, the principles behind it, and how it’s built.",
+    "eyebrow": "About",
+    "title": "A careful tool, <em>honestly</em> described.",
+    "p1": "Orqivanta started from a simple observation: agencies rarely lose time on the work itself. They lose it around the work — chasing feedback, hunting for the latest version, and rebuilding the state of a project from memory before every call.",
+    "p2": "It’s a portfolio project, built by one developer to show what a complete, production-minded product looks like: real authentication, real multi-tenancy, permissions enforced on the server, and an interface that respects the people using it.",
+    "p3": "There’s no company behind it, no investors and no customers to quote. The sample studio you can explore is fictional, and it says so wherever it appears.",
+    "principlesTitle": "What it holds to",
+    "principles": {
+      "calm": {
+        "title": "Calm over clever",
+        "body": "Quiet screens, clear words, and notifications only when something needs you."
+      },
+      "honest": {
+        "title": "Honest by default",
+        "body": "No invented numbers, no fake customers, and no buttons that lead nowhere."
+      },
+      "private": {
+        "title": "Private unless shared",
+        "body": "Work stays internal until someone decides to share it, one item at a time."
+      },
+      "everyone": {
+        "title": "Usable by everyone",
+        "body": "Keyboard paths, readable contrast, reduced motion, and two languages from day one."
+      }
+    },
+    "stackTitle": "How it’s built",
+    "stackLead": "A modular monolith in TypeScript. No microservices for their own sake, and nothing that needs a paid account to run.",
+    "stack": {
+      "next": {
+        "name": "Next.js 15 and React 19",
+        "body": "Server-rendered pages and server actions"
+      },
+      "pg": {
+        "name": "PostgreSQL 16",
+        "body": "Row-level security on every tenant table, full-text and fuzzy search"
+      },
+      "drizzle": {
+        "name": "Drizzle ORM and zod",
+        "body": "Typed queries and validated inputs"
+      },
+      "jobs": {
+        "name": "pg-boss",
+        "body": "Background jobs for email, reminders and exports, with retries"
+      },
+      "sse": {
+        "name": "Server-Sent Events",
+        "body": "Live updates fed by LISTEN/NOTIFY, replayed after a reconnect"
+      },
+      "ui": {
+        "name": "Tailwind CSS and Radix UI",
+        "body": "Accessible components on shared design tokens"
+      }
+    },
+    "nameTitle": "The name",
+    "nameBody": "Orqivanta is a coined word. The mark is an open orbit around a still point: work moving around something steady.",
+    "contactLine": "Questions or feedback? <link>Get in touch</link>."
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Questions, feedback, accessibility problems or privacy requests — send a message and a person will read it.",
+    "eyebrow": "Contact",
+    "title": "Get in <em>touch</em>.",
+    "lead": "Questions, feedback, an accessibility problem or a privacy request — it all lands in one inbox and is read by a person.",
+    "expectTitle": "What to expect",
+    "expectBody": "This is a portfolio project, so there’s no support team and no promised response time. Every message is read.",
+    "storedTitle": "What happens to your message",
+    "storedBody": "It’s stored in Orqivanta’s database and used only to reply to you. See the <link>privacy policy</link>.",
+    "securityTitle": "Found a security issue?",
+    "securityBody": "Please describe it here with the topic “Privacy”, and don’t test against other people’s workspaces.",
+    "formTitle": "Send a message",
+    "name": "Your name",
+    "email": "Email",
+    "company": "Company",
+    "topic": "Topic",
+    "message": "Message",
+    "messageHint": "At least 10 characters.",
+    "website": "Leave this field empty",
+    "topics": {
+      "general": "General question",
+      "demo": "The demo",
+      "feedback": "Product feedback",
+      "accessibility": "Accessibility",
+      "privacy": "Privacy or security"
+    },
+    "send": "Send message",
+    "sentTitle": "Thanks — your message is in.",
+    "sentBody": "If it needs a reply, it will go to {email}.",
+    "sendAnother": "Send another message"
+  },
+  "accessibility": {
+    "metaTitle": "Accessibility",
+    "metaDescription": "Orqivanta’s accessibility statement: a WCAG 2.2 AA target, how it’s checked, known limitations, and how to report a problem.",
+    "eyebrow": "Accessibility",
+    "title": "Accessibility statement",
+    "lead": "Orqivanta should work for everyone who uses it, including people who rely on a keyboard, a screen reader, magnification or reduced motion.",
+    "updated": "Last reviewed {date}",
+    "targetTitle": "Our target",
+    "targetBody": "We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA across the public site, the workspace and the client portal. This is a target, not a certification: no independent party has audited the product.",
+    "doTitle": "What we do",
+    "do": {
+      "semantic": "Semantic headings and landmarks, and a “Skip to content” link on every page.",
+      "keyboard": "Every control works with a keyboard, including a keyboard alternative to drag-and-drop on boards.",
+      "focus": "A visible focus outline on everything you can interact with.",
+      "labels": "Labels, hints and errors tied to their fields, so screen readers announce them together.",
+      "colour": "Status always shown with an icon and a word as well as a colour; colours chosen for AA contrast in light and dark themes.",
+      "motion": "Animations turned off when your system asks for reduced motion.",
+      "charts": "A table beside every chart in reports, with written definitions of each metric.",
+      "reflow": "Layouts that work at 390 pixels wide and at 200% zoom without sideways scrolling."
+    },
+    "testTitle": "How it’s checked",
+    "testBody": "Pages are scanned with axe-core, an automated accessibility engine, in light and dark themes and at phone width, and walked through with the keyboard. Automated scans find only some problems, so a clean result is treated as a minimum, not proof. Testing with screen readers has been limited so far.",
+    "limitsTitle": "Known limitations",
+    "limits": {
+      "editor": "The rich-text editor’s toolbar and @mention suggestions haven’t been fully tested with screen readers.",
+      "files": "Previews show files as they were uploaded. We can’t add text alternatives to images or PDFs that people share.",
+      "live": "Live updates refresh what’s on screen, but not every change is announced to screen readers yet.",
+      "ru": "The Russian translation can lag behind English for newly added text."
+    },
+    "reportTitle": "Report a problem",
+    "reportBody": "If something gets in your way, tell us through the <link>contact form</link> and choose “Accessibility”. Say which page, what you were trying to do, and which browser and assistive technology you use. Accessibility problems are treated as bugs, not requests."
+  },
+  "seeProduct": "See the whole product"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Development mailbox",
+  "devOnly": "Development only",
+  "description": "Every email Orqivanta sends is copied here, so verification, invitation and reset links work without an email provider. This page only exists when DEMO_MODE is on.",
+  "listLabel": "Sent emails",
+  "to": "To",
+  "failed": "Delivery failed",
+  "plainText": "Plain-text version",
+  "previewTitle": "Preview of “{subject}”",
+  "emptyTitle": "No emails yet",
+  "emptyBody": "Send an invitation or request a password reset and it will show up here."
+}

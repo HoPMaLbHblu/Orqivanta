@@ -314,8 +314,10 @@ export async function getProjectOverview(actor: Actor, projectId: string) {
     const ms = await tx
       .select({
         milestone: milestones,
-        total: sql<number>`(select count(*)::int from ${tasks} t where t.milestone_id = ${milestones.id} and t.deleted_at is null)`,
-        done: sql<number>`(select count(*)::int from ${tasks} t join ${projectStatuses} s on s.id = t.status_id where t.milestone_id = ${milestones.id} and t.deleted_at is null and s.category = 'completed')`,
+        // milestones.id is written out in full: inside these subqueries a bare "id" would be
+        // ambiguous with tasks.id.
+        total: sql<number>`(select count(*)::int from ${tasks} t where t.milestone_id = milestones.id and t.deleted_at is null)`,
+        done: sql<number>`(select count(*)::int from ${tasks} t join ${projectStatuses} s on s.id = t.status_id where t.milestone_id = milestones.id and t.deleted_at is null and s.category = 'completed')`,
       })
       .from(milestones)
       .where(and(eq(milestones.projectId, p.id), isClient ? eq(milestones.sharedWithClient, true) : undefined))

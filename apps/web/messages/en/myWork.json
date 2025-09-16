@@ -1,0 +1,25 @@
+{
+  "title": "My work",
+  "description": "Open tasks assigned to you, grouped by when they’re due.",
+  "truncated": "Showing the first 300 tasks.",
+  "filters": {
+    "all": "Assigned to me",
+    "overdue": "Overdue",
+    "week": "Due in 7 days",
+    "watching": "Watching"
+  },
+  "buckets": {
+    "overdue": "Overdue",
+    "today": "Today",
+    "week": "This week",
+    "later": "Later",
+    "none": "No due date"
+  },
+  "empty": {
+    "title": "Nothing assigned to you",
+    "body": "When someone assigns you a task it appears here, newest due date first.",
+    "browseProjects": "Browse projects",
+    "filtered": "Nothing here",
+    "filteredBody": "No open tasks match this filter."
+  }
+}

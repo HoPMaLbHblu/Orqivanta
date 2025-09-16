@@ -33,10 +33,10 @@ export async function listClients(actor: Actor, opts: { includeArchived?: boolea
         accentColor: clientAccounts.accentColor,
         archivedAt: clientAccounts.archivedAt,
         createdAt: clientAccounts.createdAt,
-        projectCount: sql<number>`(select count(*)::int from ${projects} p where p.client_account_id = ${clientAccounts.id} and p.deleted_at is null and p.archived_at is null)`,
-        contactCount: sql<number>`(select count(*)::int from ${memberships} m where m.client_account_id = ${clientAccounts.id} and m.role = 'client')`,
-        openRequestCount: sql<number>`(select count(*)::int from ${requests} r where r.client_account_id = ${clientAccounts.id} and r.status in ${OPEN_REQUEST_STATUSES})`,
-        pendingApprovalCount: sql<number>`(select count(*)::int from ${approvals} a join ${projects} p on p.id = a.project_id where p.client_account_id = ${clientAccounts.id} and a.status = 'pending')`,
+        projectCount: sql<number>`(select count(*)::int from ${projects} p where p.client_account_id = client_accounts.id and p.deleted_at is null and p.archived_at is null)`,
+        contactCount: sql<number>`(select count(*)::int from ${memberships} m where m.client_account_id = client_accounts.id and m.role = 'client')`,
+        openRequestCount: sql<number>`(select count(*)::int from ${requests} r where r.client_account_id = client_accounts.id and r.status in ${OPEN_REQUEST_STATUSES})`,
+        pendingApprovalCount: sql<number>`(select count(*)::int from ${approvals} a join ${projects} p on p.id = a.project_id where p.client_account_id = client_accounts.id and a.status = 'pending')`,
       })
       .from(clientAccounts)
       .where(and(eq(clientAccounts.orgId, actor.orgId), opts.includeArchived ? undefined : isNull(clientAccounts.archivedAt)))

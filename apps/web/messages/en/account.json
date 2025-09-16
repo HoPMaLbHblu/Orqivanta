@@ -1,0 +1,67 @@
+{
+  "title": "Account settings",
+  "description": "Your profile, preferences and security. These apply across every workspace you’re in.",
+  "navLabel": "Account sections",
+  "backTo": "Back to {name}",
+  "nav": {
+    "profile": "Profile",
+    "preferences": "Preferences",
+    "notifications": "Notifications",
+    "security": "Security"
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "How you appear to other people in your workspaces.",
+    "name": "Name",
+    "avatarColor": "Avatar colour",
+    "avatarHint": "Orqivanta shows your initials in this colour. No photo uploads in this release.",
+    "email": "Email address",
+    "emailVerified": "Verified. Contact support to change the address on your account.",
+    "emailUnverified": "Not verified yet — check your inbox for the confirmation link.",
+    "saved": "Profile saved"
+  },
+  "preferences": {
+    "title": "Preferences",
+    "description": "Language, theme and how dates are shown.",
+    "timeZone": "Time zone",
+    "timeZoneHint": "Due dates, reports and timestamps use this zone.",
+    "dateFormat": "Date format",
+    "saved": "Preferences saved"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "description": "Choose what reaches you, and where. In-app notifications appear in your inbox.",
+    "caption": "Notification preferences by category and channel",
+    "category": "Category",
+    "inApp": "In app",
+    "email": "Email",
+    "inAppFor": "In-app notifications for {category}",
+    "emailFor": "Email notifications for {category}",
+    "footnote": "Some messages always arrive by email: password changes, invitations and security notices."
+  },
+  "security": {
+    "passwordTitle": "Password",
+    "passwordDescription": "Changing your password signs out your other devices.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "passwordHint": "At least 10 characters.",
+    "changePassword": "Change password",
+    "passwordChanged": "Password changed",
+    "mismatch": "The two passwords don’t match.",
+    "signsOutOthers": "Your other sessions end as soon as the password changes.",
+    "demoNotice": "Demo accounts can’t change their password.",
+    "sessionsTitle": "Active sessions",
+    "sessionsDescription": "Devices signed in to your account. Revoke anything you don’t recognise.",
+    "thisDevice": "This device",
+    "unknownIp": "Unknown address",
+    "lastActive": "last active",
+    "signedIn": "signed in",
+    "revoke": "Revoke",
+    "revoked": "That session was signed out",
+    "signOutOthers": "Sign out other devices",
+    "signOutOthersTitle": "Sign out your other devices?",
+    "signOutOthersBody": "{count, plural, one {# other session ends} other {# other sessions end}}. You stay signed in here.",
+    "othersRevoked": "Your other sessions were signed out"
+  }
+}

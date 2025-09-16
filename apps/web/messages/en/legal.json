@@ -1,0 +1,121 @@
+{
+  "updated": "Last updated {date}",
+  "onThisPage": "On this page",
+  "privacy": {
+    "metaTitle": "Privacy policy",
+    "metaDescription": "What Orqivanta stores, why, how long it keeps it, and what you can do about it.",
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "lead": "This policy explains what Orqivanta stores, why, and what you can do about it. Orqivanta is a portfolio project run by an individual developer, not a company, so this is written plainly.",
+    "sections": {
+      "collect": {
+        "title": "What we store",
+        "items": {
+          "account": "<b>Your account:</b> name, email address, a password hash (argon2id — never the password itself), and your preferences such as language, theme, time zone and date format.",
+          "content": "<b>Workspace content:</b> everything you and your team create — projects, tasks, documents, files, comments, requests and approvals.",
+          "sessions": "<b>Sessions:</b> a hash of your session token, your browser’s user agent, your IP address and when the session was last used, so you can review and revoke your sessions.",
+          "audit": "<b>Security records:</b> an audit log of administrative actions in each organization, including the IP address they came from.",
+          "limits": "<b>Rate-limit counters:</b> short-lived counters keyed by IP address or email address, used to slow down abuse of sign-in, sign-up and forms.",
+          "email": "<b>Email log:</b> a copy of each email Orqivanta sends, kept so delivery problems can be traced.",
+          "contact": "<b>Contact form:</b> the name, email address, company and message you send."
+        }
+      },
+      "cookies": {
+        "title": "Cookies",
+        "body": "Orqivanta uses only the cookies it needs to work: a session cookie that keeps you signed in (httpOnly, not readable by scripts), and two preference cookies that remember your language and theme. There are no analytics, advertising or third-party tracking cookies, so there’s no cookie banner to dismiss."
+      },
+      "dont": {
+        "title": "What we don’t do",
+        "body": "We don’t sell or rent your data, show advertising, use analytics trackers, or use your content to train AI models. Your workspace content is used only to run the workspace for you and the people you share it with."
+      },
+      "access": {
+        "title": "Who can see your workspace",
+        "body": "Members of your organization see what their role and project membership allow. Client contacts see only items shared with their own client account. The person operating this instance has technical access to the database; it isn’t used to read workspace content, except to fix a problem you’ve reported."
+      },
+      "where": {
+        "title": "Where data lives",
+        "body": "Data lives wherever this instance is hosted. In the default setup that’s one machine: PostgreSQL for data and a private folder for files. Files are never served from a public address — every download is checked against your permissions at the moment you ask for it. Email goes through the configured mail provider; in development it goes to a local test inbox and never leaves the machine."
+      },
+      "retention": {
+        "title": "How long we keep it",
+        "items": {
+          "sessions": "Sessions expire after 30 days, or after 14 days without use, and end immediately when you sign out or revoke them.",
+          "deleted": "Deleted projects, tasks, documents and files can be restored for 30 days, then they’re removed for good.",
+          "audit": "Audit records are kept for as long as the organization exists.",
+          "contact": "Contact messages are kept for as long as they’re needed to answer them."
+        }
+      },
+      "choices": {
+        "title": "Your choices",
+        "items": {
+          "export": "Owners and admins can export all of an organization’s data from its settings.",
+          "sessions": "You can see and revoke your active sessions from your account’s security settings.",
+          "prefs": "You can change your name, language, theme and notification preferences at any time.",
+          "delete": "Self-service account deletion isn’t in this release. Ask through the <link>contact form</link> with the topic “Privacy or security”, and your account will be deleted by hand."
+        }
+      },
+      "demo": {
+        "title": "The demo workspace",
+        "body": "Everything in the sample studio is fictional, including the people, clients and email addresses. It’s reset regularly. Please don’t put real personal information into it."
+      },
+      "changes": {
+        "title": "Changes to this policy",
+        "body": "If this policy changes, the new version will be posted here with a new date, and meaningful changes will be noted in the changelog."
+      },
+      "contact": {
+        "title": "Questions",
+        "body": "Write through the <link>contact form</link> and choose “Privacy or security”."
+      }
+    }
+  },
+  "terms": {
+    "metaTitle": "Terms of use",
+    "metaDescription": "The terms for using Orqivanta: a free preview of a portfolio project, offered as is.",
+    "eyebrow": "Legal",
+    "title": "Terms of use",
+    "lead": "These terms are short because the arrangement is simple: Orqivanta is a free preview of a portfolio project, offered as is.",
+    "sections": {
+      "using": {
+        "title": "Using Orqivanta",
+        "body": "You may use Orqivanta if you can form a binding agreement where you live. Give accurate account details, keep your password to yourself, and remember that you’re responsible for what happens under your account and in organizations you own."
+      },
+      "content": {
+        "title": "Your content",
+        "body": "You keep ownership of everything you put into Orqivanta. You allow it to store, process and display that content only as needed to run the service for you and the people you share it with."
+      },
+      "acceptable": {
+        "title": "Acceptable use",
+        "items": {
+          "law": "Don’t upload anything unlawful, or anything you don’t have the right to share.",
+          "harm": "Don’t upload malware or use Orqivanta to harass, deceive or spam anyone.",
+          "access": "Don’t try to reach other organizations’ data, get around permissions, or overload the service.",
+          "disclose": "If you find a security problem, report it through the contact form instead of exploiting it. That’s welcome."
+        }
+      },
+      "preview": {
+        "title": "A preview, as is",
+        "body": "Orqivanta is provided as is, without warranties of any kind. There’s no service-level agreement, features may change or disappear, and the preview may end. Where possible, notice will be given in the changelog. Keep your own copies of anything important — the data export exists for that."
+      },
+      "fees": {
+        "title": "Fees",
+        "body": "Orqivanta is free. You’ll never be charged, and you’ll never be asked for payment details."
+      },
+      "liability": {
+        "title": "Liability",
+        "body": "To the extent the law allows, the developer isn’t liable for indirect or consequential losses, or for lost data or profits, arising from your use of a free preview."
+      },
+      "ending": {
+        "title": "Ending",
+        "body": "You can stop using Orqivanta at any time. Accounts that break these terms may be suspended or removed."
+      },
+      "changes": {
+        "title": "Changes",
+        "body": "If these terms change, the new version will be posted here with a new date. Continuing to use Orqivanta after that means you accept the update."
+      },
+      "contact": {
+        "title": "Questions",
+        "body": "Write through the <link>contact form</link>."
+      }
+    }
+  }
+}

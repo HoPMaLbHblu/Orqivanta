@@ -1,0 +1,19 @@
+{
+  "notFound": {
+    "metaTitle": "Page not found",
+    "eyebrow": "Error 404",
+    "title": "This page has wandered off.",
+    "body": "The address may be mistyped, or the page may have moved. If you followed a link into a workspace, you may not have access to it — ask the person who sent it.",
+    "home": "Back to the home page",
+    "workspace": "Open your workspace",
+    "contact": "Report a broken link"
+  },
+  "error": {
+    "eyebrow": "Error 500",
+    "title": "Something broke on our side.",
+    "body": "The problem has been logged. Try again — if it keeps happening, let us know what you were doing.",
+    "retry": "Try again",
+    "home": "Back to the home page",
+    "reference": "Reference {digest}"
+  }
+}

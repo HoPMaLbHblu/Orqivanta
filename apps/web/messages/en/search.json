@@ -1,0 +1,19 @@
+{
+  "title": "Search",
+  "description": "Search projects, tasks, documents, requests, clients and files you have access to.",
+  "label": "Search the workspace",
+  "placeholder": "Search by title, content or key, e.g. ATL-12",
+  "submit": "Search",
+  "types": "Result types",
+  "all": "All",
+  "type": { "project": "Projects", "task": "Tasks", "document": "Documents", "request": "Requests", "client": "Clients", "file": "Files" },
+  "typeOne": { "project": "Project", "task": "Task", "document": "Document", "request": "Request", "client": "Client", "file": "File" },
+  "resultsFor": "{count, plural, one {# result} other {# results}} for “{q}”",
+  "showingTop": "Showing the top {shown} of {total}. Refine your search to narrow it down.",
+  "startTitle": "Search your workspace",
+  "startBody": "Results only include items you can open. Prefix matches work too: “brand gui” finds “brand guidelines”.",
+  "emptyTitle": "Nothing matches “{q}”",
+  "emptyBody": "Check the spelling, try fewer words, or search a task key like ATL-12.",
+  "emptyTypeTitle": "No {type} match “{q}”",
+  "emptyTypeBody": "Other result types may have matches; switch to All."
+}
