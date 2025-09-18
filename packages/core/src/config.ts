@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 function bool(v: string | undefined, fallback: boolean) {
@@ -30,7 +31,8 @@ export const config = {
     return process.env.RESEND_API_KEY ?? '';
   },
   get storageDir() {
-    return path.resolve(process.env.STORAGE_DIR ?? '.storage');
+    // Relative paths resolve from the repository root, so the web app, worker and seed share one folder.
+    return path.resolve(workspaceRoot(), process.env.STORAGE_DIR ?? '.storage');
   },
   get maxUploadBytes() {
     return Number(process.env.MAX_UPLOAD_MB ?? 25) * 1024 * 1024;
@@ -42,3 +44,15 @@ export const config = {
   verifyEmailHours: 48,
   resetPasswordMinutes: 60,
 };
+
+let root: string | undefined;
+function workspaceRoot() {
+  if (root) return root;
+  let dir = process.cwd();
+  while (!existsSync(path.join(dir, 'pnpm-workspace.yaml'))) {
+    const up = path.dirname(dir);
+    if (up === dir) return (root = process.cwd());
+    dir = up;
+  }
+  return (root = dir);
+}

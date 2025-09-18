@@ -111,7 +111,7 @@ export function TaskBoard({ org, projectId, statuses, tasks, canEdit, canCreate,
   const total = columns.reduce((n, c) => n + c.tasks.length, 0);
 
   return (
-    <DndContext id="task-board" sensors={sensors} collisionDetection={closestCorners} onDragStart={onDragStart} onDragEnd={onDragEnd} onDragCancel={() => setDragging(null)} accessibility={{ announcements: { onDragStart: ({ active }) => t('board.a11y.pickedUp', { task: String(active.id) }), onDragEnd: () => t('board.a11y.dropped') } }}>
+    <DndContext id="task-board" sensors={sensors} collisionDetection={closestCorners} onDragStart={onDragStart} onDragEnd={onDragEnd} onDragCancel={() => setDragging(null)} accessibility={{ announcements: { onDragStart: ({ active }) => t('board.a11y.pickedUp', { task: String(active.id) }), onDragOver: () => undefined, onDragEnd: () => t('board.a11y.dropped'), onDragCancel: () => t('board.a11y.dropped') } }}>
       <p className="sr-only">{t('board.keyboardHint')}</p>
       <div className="flex gap-3 overflow-x-auto pb-3">
         {columns.map((c) => (

@@ -80,7 +80,7 @@ export function TaskListView({
     if (groupBy === 'milestone') {
       const list = milestones.map((m) => ({ key: m.id, label: m.name, milestoneId: m.id, tasks: tasks.filter((tk) => tk.milestoneId === m.id) }));
       const none = tasks.filter((tk) => !tk.milestoneId);
-      return [...list, ...(none.length ? [{ key: 'none', label: t('groups.noMilestone'), tasks: none }] : [])].filter((g) => g.tasks.length || g.milestoneId);
+      return [...list, ...(none.length ? [{ key: 'none', label: t('groups.noMilestone'), tasks: none }] : [])].filter((g) => g.tasks.length || 'milestoneId' in g);
     }
     const byStatus = statuses.length ? statuses : dedupeStatuses(tasks);
     return byStatus
