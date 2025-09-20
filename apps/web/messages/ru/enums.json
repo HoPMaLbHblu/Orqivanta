@@ -1,0 +1,19 @@
+{
+  "priority": { "none": "Без приоритета", "low": "Низкий", "medium": "Средний", "high": "Высокий", "urgent": "Срочный" },
+  "statusCategory": { "backlog": "Бэклог", "unstarted": "К выполнению", "started": "В работе", "review": "На проверке", "completed": "Готово", "canceled": "Отменено" },
+  "requestStatus": { "submitted": "Новый", "in_review": "На рассмотрении", "needs_info": "Нужны детали", "accepted": "Принят", "in_progress": "В работе", "completed": "Выполнен", "declined": "Отклонён", "duplicate": "Дубликат" },
+  "requestStatusClient": { "submitted": "Получен", "in_review": "Рассматривается", "needs_info": "Ждём вашего ответа", "accepted": "Принят", "in_progress": "В работе", "completed": "Готово", "declined": "Отклонён", "duplicate": "Объединён" },
+  "approvalStatus": { "pending": "Ждёт проверки", "approved": "Согласовано", "changes_requested": "Нужны правки", "rejected": "Отклонено", "canceled": "Отменено", "superseded": "Заменено новым раундом" },
+  "decision": { "approved": "Согласовано", "changes_requested": "Запрошены правки", "rejected": "Отклонено" },
+  "health": { "on_track": "По плану", "at_risk": "Под угрозой", "off_track": "Отстаёт", "computedHint": "Оценка по просроченной и заблокированной работе. Опубликуйте обновление, чтобы указать статус самостоятельно." },
+  "orgRole": { "owner": "Владелец", "admin": "Администратор", "member": "Участник", "client": "Контакт клиента" },
+  "projectRole": { "manager": "Менеджер", "contributor": "Исполнитель", "viewer": "Наблюдатель", "client": "Клиент" },
+  "visibility": { "org": "Вся организация", "team": "Только команда", "private": "Только участники" },
+  "projectStatus": { "active": "Активен", "paused": "На паузе", "completed": "Завершён" },
+  "milestoneStatus": { "planned": "Запланирован", "in_progress": "В работе", "done": "Готов", "missed": "Сорван" },
+  "documentKind": { "page": "Страница", "spec": "Спецификация", "meeting_notes": "Заметки встречи", "decision": "Решение", "brief": "Бриф" },
+  "fileKind": { "attachment": "Вложение", "deliverable": "Результат" },
+  "rule": { "all": "Согласовать должны все", "any": "Достаточно одного проверяющего" },
+  "notificationCategory": { "assignment": "Назначения", "mention": "Упоминания", "comment": "Комментарии", "status": "Смена статусов", "approval": "Согласования", "request": "Запросы", "due": "Сроки", "membership": "Участие" },
+  "fieldType": { "short_text": "Короткий текст", "long_text": "Длинный текст", "select": "Выбор", "date": "Дата", "url": "Ссылка", "number": "Число" }
+}
