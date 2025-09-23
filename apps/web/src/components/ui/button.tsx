@@ -40,7 +40,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       disabled={asChild ? undefined : disabled || loading}
       aria-busy={loading || undefined}
       className={cn(
-        'inline-flex shrink-0 select-none items-center font-medium whitespace-nowrap transition-colors duration-150 disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
+        'inline-flex shrink-0 select-none items-center font-medium whitespace-nowrap transition-[color,background-color,border-color,box-shadow,transform] duration-150 active:scale-[0.97] active:duration-75 disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0',
         variants[variant],
         sizes[size],
         className,

@@ -39,7 +39,7 @@ function NavItem({ href, icon: Icon, label, count, exact, attention }: { href: s
     <Link href={href} aria-current={active ? 'page' : undefined} className={cn('group flex h-8 items-center gap-2.5 rounded-md px-2 text-[13px] transition-colors', active ? 'bg-surface-3 font-medium text-ink' : 'text-ink-2 hover:bg-surface-2 hover:text-ink')}>
       <Icon className={cn('size-4 shrink-0', active ? 'text-ink' : 'text-ink-3 group-hover:text-ink-2')} aria-hidden />
       <span className="truncate">{label}</span>
-      {count ? <span className={cn('ml-auto rounded-full px-1.5 text-[11px] font-medium tabular-nums', attention ? 'bg-attention-soft text-attention' : 'text-ink-3')}>{count}</span> : null}
+      {count ? <span key={count} data-count className={cn('ml-auto inline-block rounded-full px-1.5 text-[11px] font-medium tabular-nums', attention ? 'bg-attention-soft text-attention' : 'text-ink-3')}>{count}</span> : null}
     </Link>
   );
 }

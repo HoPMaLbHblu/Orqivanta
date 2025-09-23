@@ -323,3 +323,57 @@
   height: 0;
   pointer-events: none;
 }
+
+/*
+ * Motion layer: small, purposeful movement. Pages settle in, clickable cards lift a little,
+ * and progress fills grow into place. All of it switches off with prefers-reduced-motion.
+ */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes grow-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes count-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); }
+}
+#main > *,
+.page-in {
+  animation: page-in 260ms var(--ease-out) both;
+}
+/* The first blocks of a page arrive one after another. */
+#main > * > :nth-child(2) { animation: page-in 300ms 40ms var(--ease-out) both; }
+#main > * > :nth-child(3) { animation: page-in 300ms 80ms var(--ease-out) both; }
+#main > * > :nth-child(4) { animation: page-in 300ms 120ms var(--ease-out) both; }
+
+a.rounded-lg.border,
+a.rounded-xl.border,
+.lift {
+  transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out), border-color 150ms;
+}
+a.rounded-lg.border:hover,
+a.rounded-xl.border:hover,
+.lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pop);
+}
+a.rounded-lg.border:active,
+a.rounded-xl.border:active { transform: translateY(0); }
+
+[data-progress-fill] {
+  transform-origin: left center;
+  animation: grow-x 700ms var(--ease-out) both;
+}
+[data-count] {
+  display: inline-block;
+  animation: count-pop 320ms var(--ease-out) both;
+}
+/* Rows in lists respond to the pointer with a soft accent edge. */
+li > a:hover,
+tr:hover > td:first-child {
+  box-shadow: inset 2px 0 0 var(--accent);
+}
