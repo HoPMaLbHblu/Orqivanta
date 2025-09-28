@@ -486,8 +486,8 @@
         "body": "Typed queries and validated inputs"
       },
       "jobs": {
-        "name": "pg-boss",
-        "body": "Background jobs for email, reminders and exports, with retries"
+        "name": "Transactional outbox and a worker",
+        "body": "Email, reminders and exports run in the background with retries, and never get lost if a request fails"
       },
       "sse": {
         "name": "Server-Sent Events",
