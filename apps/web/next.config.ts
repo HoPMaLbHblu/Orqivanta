@@ -19,6 +19,8 @@ const securityHeaders = [
 
 const config: NextConfig = {
   reactStrictMode: true,
+  // The floating dev badge sits on top of the sidebar's account menu; keep it out of the way.
+  devIndicators: false,
   // Lets several dev servers share one checkout without clobbering each other's build output.
   distDir: process.env.NEXT_DIST_DIR || '.next',
   poweredByHeader: false,
