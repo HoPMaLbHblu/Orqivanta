@@ -1,0 +1,29 @@
+name: Nightly demo reset
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    if: ${{ vars.DEMO_RESET_ENABLED == 'true' }}
+    env:
+      DATABASE_URL: ${{ secrets.DEMO_DATABASE_URL }}
+      DATABASE_ADMIN_URL: ${{ secrets.DEMO_DATABASE_ADMIN_URL }}
+      STORAGE_DIR: /tmp/orqivanta-storage
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:migrate
+      - run: pnpm demo:reset
+      - name: Restart the web service so its file storage matches the new seed
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: '[ -z "$HOOK" ] || curl -fsS -X POST "$HOOK"'

@@ -70,6 +70,20 @@ pnpm test:e2e    # Playwright + axe, against the seeded demo workspace
 
 CI runs all three on every push (`.github/workflows/ci.yml`).
 
+## Public demo deployment
+
+The repo ships a free-tier setup: the app on Render and PostgreSQL on Neon.
+
+1. Create a Neon project and run `infra/postgres/init.sql` against it, so the app role exists.
+2. In Render, choose **New → Blueprint** and point it at this repository. `render.yaml` creates
+   the web service; fill in `DATABASE_URL` (the app role), `DATABASE_ADMIN_URL` (the owner role)
+   and `APP_URL`.
+3. Optional nightly reset: add the secrets `DEMO_DATABASE_URL`, `DEMO_DATABASE_ADMIN_URL` and
+   `RENDER_DEPLOY_HOOK`, then set the repository variable `DEMO_RESET_ENABLED=true`.
+
+On the free plan the worker runs in the same instance as the web server, email goes to the
+log and `/dev/mailbox`, and uploads live on temporary disk until the next reset.
+
 ## Design notes
 
 See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for how tenancy, permissions, files,
