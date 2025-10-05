@@ -2,15 +2,16 @@
 # The database lives on Neon (free tier); set DATABASE_URL and DATABASE_ADMIN_URL in the dashboard.
 # The free plan has no background workers or disks, so the worker runs next to the web server in
 # the same instance, and uploaded files live on the instance's temporary disk. The nightly
-# demo reset (.github/workflows/demo-reset.yml) reseeds everything, so nothing needs to persist.
+# demo reset (.github/workflows/demo-reset.yml) restarts the service, and every start migrates and
+# reseeds, so nothing needs to persist.
 services:
   - type: web
     name: orqivanta
     runtime: node
     plan: free
     region: frankfurt
-    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build && pnpm db:migrate && pnpm demo:reset
-    startCommand: (pnpm --filter @orqivanta/worker start &) && pnpm --filter @orqivanta/web exec next start --port $PORT
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm db:migrate && pnpm demo:reset && (pnpm --filter @orqivanta/worker start &) && pnpm --filter @orqivanta/web exec next start --port $PORT
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION

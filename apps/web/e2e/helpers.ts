@@ -31,7 +31,9 @@ export async function signIn(page: Page, email: string) {
 
 /** Fails on any WCAG 2.2 A/AA violation axe can detect. */
 export async function expectAccessible(page: Page) {
+  // Entrance animations fade content in; checking contrast mid-fade reports false failures.
+  await page.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished.catch(() => undefined))));
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
-  const summary = results.violations.map((v) => `${v.id} (${v.impact}): ${v.nodes.length} × ${v.help}`);
+  const summary = results.violations.map((v) => `${v.id} (${v.impact}): ${v.nodes.length} × ${v.help} ${v.nodes.map((n) => n.target.join(' ') + ' ' + (n.any[0]?.message ?? '')).join(' | ')}`);
   expect(summary, summary.join('\n')).toEqual([]);
 }

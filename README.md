@@ -81,6 +81,7 @@ The repo ships a free-tier setup: the app on Render and PostgreSQL on Neon.
 3. Optional nightly reset: add the secrets `DEMO_DATABASE_URL`, `DEMO_DATABASE_ADMIN_URL` and
    `RENDER_DEPLOY_HOOK`, then set the repository variable `DEMO_RESET_ENABLED=true`.
 
+Each start applies migrations and reseeds the demo, so a restart always comes up clean.
 On the free plan the worker runs in the same instance as the web server, email goes to the
 log and `/dev/mailbox`, and uploads live on temporary disk until the next reset.
 

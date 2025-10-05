@@ -18,6 +18,8 @@ export default defineConfig({
   use: {
     baseURL,
     trace: 'retain-on-failure',
+    // Accessibility checks need settled pages, not content mid-fade.
+    contextOptions: { reducedMotion: 'reduce' },
     launchOptions: process.env.PLAYWRIGHT_CHROMIUM_PATH ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH } : {},
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
