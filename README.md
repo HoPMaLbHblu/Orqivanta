@@ -60,6 +60,16 @@ Open <http://localhost:3000/demo> and pick a role, or sign in with any demo acco
 (for example `priya@northwind.example`) and the password `orqivanta-demo`.
 With `DEMO_MODE=true`, every email is also visible at `/dev/mailbox`.
 
+Docker publishes PostgreSQL on port **5433**, so it doesn't clash with a PostgreSQL already
+installed on your machine.
+
+### Troubleshooting
+
+`password authentication failed for user "orqivanta_app"` usually means the app reached a
+different PostgreSQL. This is common on Windows, where an installed PostgreSQL service listens on
+5432. Make sure `.env` points at `localhost:5433` (copy it again from `.env.example` if it is
+older), then run `docker compose up -d` again.
+
 ## Tests
 
 ```bash
