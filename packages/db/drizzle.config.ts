@@ -5,7 +5,7 @@ export default defineConfig({
   schema: './src/schema/index.ts',
   out: './migrations',
   dbCredentials: {
-    url: process.env.DATABASE_ADMIN_URL ?? 'postgres://orqivanta_owner:orqivanta_owner@localhost:5433/orqivanta',
+    url: process.env.DATABASE_ADMIN_URL ?? 'postgres://orqivanta_owner:orqivanta_owner@127.0.0.1:5433/orqivanta',
   },
   strict: true,
 });

@@ -22,7 +22,7 @@ export const config = {
     return t === 'smtp' || t === 'resend' ? t : 'log';
   },
   get smtpUrl() {
-    return process.env.SMTP_URL ?? 'smtp://localhost:1025';
+    return process.env.SMTP_URL ?? 'smtp://127.0.0.1:1025';
   },
   get mailFrom() {
     return process.env.MAIL_FROM ?? 'Orqivanta <hello@orqivanta.local>';

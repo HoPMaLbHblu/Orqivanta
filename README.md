@@ -67,8 +67,11 @@ installed on your machine.
 
 `password authentication failed for user "orqivanta_app"` usually means the app reached a
 different PostgreSQL. This is common on Windows, where an installed PostgreSQL service listens on
-5432. Make sure `.env` points at `localhost:5433` (copy it again from `.env.example` if it is
+5432. Make sure `.env` points at `127.0.0.1:5433` (copy it again from `.env.example` if it is
 older), then run `docker compose up -d` again.
+
+`queryA ETIMEOUT localhost` from the worker means `localhost` could not be resolved; use
+`127.0.0.1` in `SMTP_URL` and the database URLs, as `.env.example` does.
 
 ## Tests
 
