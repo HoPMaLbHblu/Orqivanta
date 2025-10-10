@@ -1,9 +1,11 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import { fileURLToPath } from 'node:url';
 
 // The monorepo keeps one .env at the root; load it for the web app too (already-set variables win).
 try {
-  process.loadEnvFile(new URL('../../.env', import.meta.url).pathname);
+  // fileURLToPath, not URL.pathname: on Windows the pathname is "/C:/..." and fails to load.
+  process.loadEnvFile(fileURLToPath(new URL('../../.env', import.meta.url)));
 } catch {
   // No root .env: rely on the environment.
 }
