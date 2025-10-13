@@ -60,6 +60,10 @@ Open <http://localhost:3000/demo> and pick a role, or sign in with any demo acco
 (for example `priya@northwind.example`) and the password `orqivanta-demo`.
 With `DEMO_MODE=true`, every email is also visible at `/dev/mailbox`.
 
+`pnpm dev` compiles each page the first time you open it, so first visits take a few seconds.
+To click around at full speed, run `pnpm preview` instead: it builds once and serves the
+production app (pages render in roughly 50 to 170 ms).
+
 Docker publishes PostgreSQL on port **5433**, so it doesn't clash with a PostgreSQL already
 installed on your machine.
 

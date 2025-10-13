@@ -1,11 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalPassThroughEnv": ["NODE_EXTRA_CA_CERTS"],
   "globalEnv": ["NODE_ENV", "DATABASE_URL", "DATABASE_ADMIN_URL", "APP_URL"],
   "tasks": {
     "build": { "dependsOn": ["^build"], "outputs": [".next/**", "!.next/cache/**", "dist/**"] },
     "typecheck": { "dependsOn": ["^typecheck"] },
     "lint": {},
     "test": { "cache": false },
-    "dev": { "cache": false, "persistent": true }
+    "dev": { "cache": false, "persistent": true },
+    "start": { "cache": false, "persistent": true }
   }
 }
