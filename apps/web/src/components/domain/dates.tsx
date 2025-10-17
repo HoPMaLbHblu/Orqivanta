@@ -7,8 +7,9 @@ export function RelativeTime({ date, className }: { date: Date | string; classNa
   const format = useFormatter();
   const now = useNow();
   const d = typeof date === 'string' ? new Date(date) : date;
+  // Server and browser render a few seconds apart, so "just now" can become "1 second ago".
   return (
-    <time dateTime={d.toISOString()} title={format.dateTime(d, { dateStyle: 'medium', timeStyle: 'short' })} className={className}>
+    <time dateTime={d.toISOString()} title={format.dateTime(d, { dateStyle: 'medium', timeStyle: 'short' })} className={className} suppressHydrationWarning>
       {format.relativeTime(d, now)}
     </time>
   );
