@@ -5,7 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { MailCheck } from 'lucide-react';
-import { forgotPasswordAction, resendVerificationAction, resetPasswordAction, signInAction, signUpAction, verifyEmailAction } from '@/actions/auth';
+import { forgotPasswordAction, resendVerificationAction, resetPasswordAction, signInAction, signUpAction, twoFactorSignInAction, verifyEmailAction } from '@/actions/auth';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Field, FormError } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
@@ -57,8 +58,20 @@ export function SignInForm({ next, initialEmail }: { next?: string; initialEmail
   const [email, setEmail] = useState(initialEmail ?? '');
   const [password, setPassword] = useState('');
   const [unverified, setUnverified] = useState<string | null>(null);
+  const [challenge, setChallenge] = useState<string | null>(null);
 
   if (unverified) return <CheckInbox email={unverified} title={t('verify.title')} body={t('verify.unverifiedBody')} />;
+  if (challenge)
+    return (
+      <TwoFactorStep
+        challenge={challenge}
+        next={next}
+        onRestart={() => {
+          setChallenge(null);
+          setPassword('');
+        }}
+      />
+    );
 
   return (
     <form
@@ -68,6 +81,7 @@ export function SignInForm({ next, initialEmail }: { next?: string; initialEmail
         const res = await call(() => signInAction({ email, password, next }), { refresh: false, inlineFieldErrors: true });
         if (!res.ok) return;
         if (res.data.status === 'unverified') setUnverified(res.data.email);
+        else if (res.data.status === 'two_factor') setChallenge(res.data.challenge);
         else {
           router.push(res.data.to);
           router.refresh();
@@ -90,6 +104,65 @@ export function SignInForm({ next, initialEmail }: { next?: string; initialEmail
       <Button type="submit" variant="primary" size="lg" loading={pending}>
         {t('signIn')}
       </Button>
+    </form>
+  );
+}
+
+function TwoFactorStep({ challenge, next, onRestart }: { challenge: string; next?: string; onRestart: () => void }) {
+  const t = useTranslations('auth.twoFactor');
+  const router = useRouter();
+  const { call, pending, fieldErrors, formError } = useAction();
+  const [recovery, setRecovery] = useState(false);
+  const [code, setCode] = useState('');
+
+  return (
+    <form
+      noValidate
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const res = await call(() => twoFactorSignInAction({ challenge, code, next }), { refresh: false, inlineFieldErrors: true });
+        if (!res.ok) {
+          if (res.error.code === 'CONFLICT') onRestart();
+          return;
+        }
+        if (res.data.recoveryCodesLeft !== null) toast(t('recoveryLeft', { count: res.data.recoveryCodesLeft }));
+        router.push(res.data.to);
+        router.refresh();
+      }}
+      className="flex flex-col gap-4"
+    >
+      <div>
+        <h2 className="text-[16px] font-semibold text-ink">{t('title')}</h2>
+        <p className="mt-1 text-[13px] text-ink-2">{t('subtitle')}</p>
+      </div>
+      <FormError message={formError} />
+      {recovery ? (
+        <Field key="recovery" label={t('recoveryLabel')} hint={t('recoveryHint')} error={fieldErrors.code}>
+          <Input autoComplete="off" spellCheck={false} value={code} onChange={(e) => setCode(e.target.value)} className="font-mono" autoFocus />
+        </Field>
+      ) : (
+        <Field key="app" label={t('code')} error={fieldErrors.code}>
+          <Input inputMode="numeric" autoComplete="one-time-code" value={code} onChange={(e) => setCode(e.target.value)} maxLength={7} className="font-mono tracking-widest" autoFocus />
+        </Field>
+      )}
+      <Button type="submit" variant="primary" size="lg" loading={pending} disabled={!code.trim()}>
+        {t('continue')}
+      </Button>
+      <div className="flex flex-wrap justify-between gap-2 text-[13px]">
+        <button
+          type="button"
+          className="text-accent hover:underline"
+          onClick={() => {
+            setRecovery(!recovery);
+            setCode('');
+          }}
+        >
+          {recovery ? t('useApp') : t('useRecovery')}
+        </button>
+        <button type="button" className="text-ink-3 hover:text-ink hover:underline" onClick={onRestart}>
+          {t('back')}
+        </button>
+      </div>
     </form>
   );
 }

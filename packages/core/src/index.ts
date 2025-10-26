@@ -3,6 +3,7 @@ export * from './config';
 export * from './permissions';
 export * from './auth/accounts';
 export * from './auth/sessions';
+export * from './auth/two-factor';
 export * from './services/context';
 export * from './services/access';
 export * from './services/orgs';

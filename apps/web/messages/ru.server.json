@@ -26,7 +26,6 @@
   "That organization doesn’t exist or you no longer have access to it.": "Такой организации нет, или у вас больше нет к ней доступа.",
   "Your session has ended. Sign in again to continue.": "Сеанс завершён. Войдите снова, чтобы продолжить.",
   "Something went wrong on our side. Please try again.": "Что-то пошло не так на нашей стороне. Попробуйте ещё раз.",
-
   "A checklist can have up to 100 items.": "В чек-листе может быть не больше 100 пунктов.",
   "A client with that name already exists.": "Клиент с таким названием уже есть.",
   "A comment can’t be empty. Delete it instead.": "Комментарий не может быть пустым. Удалите его вместо этого.",
@@ -195,7 +194,6 @@
   "You don’t have permission to do that.": "У вас нет прав на это действие.",
   "You join a project or your role changes.": "Вас добавляют в проект или меняют вашу роль.",
   "Your tasks are due soon or overdue.": "Срок ваших задач скоро или уже прошёл.",
-
   "This invitation was sent to {email}. Sign in with that address to accept it.": "Приглашение отправлено на {email}. Войдите с этим адресом, чтобы принять его.",
   "This upload would exceed your organization’s {mb} MB storage limit. Delete unused files or ask an admin to raise the limit.": "Загрузка превысит лимит хранилища организации ({mb} МБ). Удалите ненужные файлы или попросите администратора увеличить лимит.",
   "Files can be up to {mb} MB.": "Размер файла — до {mb} МБ.",
@@ -205,7 +203,6 @@
   "Key {key} is already used by another project.": "Ключ {key} уже используется другим проектом.",
   "No task {ref} that you can see.": "Задача {ref} не найдена среди доступных вам.",
   "Type {key} to confirm.": "Введите {key} для подтверждения.",
-
   "Assigned to you: {title}": "Вам назначено: {title}",
   "Completed in {ref}": "Выполнено в {ref}",
   "Duplicate of #{n}": "Дубликат #{n}",
@@ -229,5 +226,15 @@
   "You now own request #{n}: {title}": "Теперь вы отвечаете за запрос #{n}: {title}",
   "You were added to {name}": "Вас добавили в {name}",
   "You were mentioned in {title}": "Вас упомянули в {title}",
-  "Your role is now {role}": "Ваша роль теперь: {role}"
+  "Your role is now {role}": "Ваша роль теперь: {role}",
+  "Demo accounts are shared, so two-factor sign-in is turned off for them.": "Демо-аккаунты общие, поэтому двухфакторный вход для них отключён.",
+  "Two-factor sign-in is already on.": "Двухфакторный вход уже включён.",
+  "Start the setup again.": "Начните настройку заново.",
+  "That code didn’t match. Check the time on your phone and try the newest code.": "Код не подошёл. Проверьте время на телефоне и введите самый свежий код.",
+  "That password isn’t right.": "Неверный пароль.",
+  "Two-factor sign-in is off.": "Двухфакторный вход выключен.",
+  "This sign-in took too long. Enter your password again.": "Вход занял слишком много времени. Введите пароль ещё раз.",
+  "Enter the code.": "Введите код.",
+  "That code didn’t work. Try the newest code from your app, or a recovery code.": "Код не подошёл. Введите самый свежий код из приложения или код восстановления.",
+  "Account not found.": "Аккаунт не найден."
 }

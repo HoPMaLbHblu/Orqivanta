@@ -1,7 +1,19 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { AppError, changePassword, revokeOtherSessions, revokeSession, setNotificationPreference, updateProfile } from '@orqivanta/core';
+import QRCode from 'qrcode';
+import {
+  AppError,
+  beginTwoFactorSetup,
+  changePassword,
+  confirmTwoFactorSetup,
+  disableTwoFactor,
+  regenerateRecoveryCodes,
+  revokeOtherSessions,
+  revokeSession,
+  setNotificationPreference,
+  updateProfile,
+} from '@orqivanta/core';
 import { run } from '@/lib/action';
 import { getSession } from '@/lib/session';
 import { isLocale, LOCALE_COOKIE, THEME_COOKIE } from '@/i18n/config';
@@ -54,5 +66,35 @@ export async function revokeOtherSessionsAction() {
     const s = await session();
     await revokeOtherSessions(s.user.id, s.sessionId);
     return true;
+  });
+}
+
+export async function beginTwoFactorAction() {
+  return run(async () => {
+    const s = await session();
+    const { secret, otpauthUrl } = await beginTwoFactorSetup(s.user.id);
+    const qrSvg = await QRCode.toString(otpauthUrl, { type: 'svg', margin: 1, errorCorrectionLevel: 'M' });
+    return { secret, qrSvg };
+  });
+}
+
+export async function confirmTwoFactorAction(input: { code: string }) {
+  return run(async () => {
+    const s = await session();
+    return confirmTwoFactorSetup(s.user.id, input);
+  });
+}
+
+export async function disableTwoFactorAction(input: { password: string }) {
+  return run(async () => {
+    const s = await session();
+    return disableTwoFactor(s.user.id, input);
+  });
+}
+
+export async function regenerateRecoveryCodesAction(input: { password: string }) {
+  return run(async () => {
+    const s = await session();
+    return regenerateRecoveryCodes(s.user.id, input);
   });
 }

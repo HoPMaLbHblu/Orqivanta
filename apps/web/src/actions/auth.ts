@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import {
   AppError,
   checkResetToken,
+  completeTwoFactorSignIn,
   config,
   createSession,
   register,
@@ -30,9 +31,20 @@ export async function signInAction(input: { email: string; password: string; nex
     const meta = await requestMeta();
     const res = await signIn({ email: input.email, password: input.password }, meta);
     if (res.status === 'unverified') return { status: 'unverified' as const, email: res.email };
+    if (res.status === 'two_factor') return { status: 'two_factor' as const, challenge: res.challenge };
     await setSessionCookie(res.token, res.expiresAt);
     const to = safeNext(input.next) ?? (await homePathFor({ id: res.userId, lastActiveOrgId: res.lastActiveOrgId }));
     return { status: 'ok' as const, to };
+  });
+}
+
+export async function twoFactorSignInAction(input: { challenge: string; code: string; next?: string }) {
+  return run(async () => {
+    const meta = await requestMeta();
+    const res = await completeTwoFactorSignIn({ challenge: input.challenge, code: input.code }, meta);
+    await setSessionCookie(res.token, res.expiresAt);
+    const to = safeNext(input.next) ?? (await homePathFor({ id: res.userId, lastActiveOrgId: res.lastActiveOrgId }));
+    return { to, recoveryCodesLeft: res.recoveryCodesLeft };
   });
 }
 
@@ -78,6 +90,7 @@ export async function resetPasswordAction(input: { token: string; password: stri
   return run(async () => {
     const meta = await requestMeta();
     const session = await resetPassword(input, meta);
+    if (!session) return { to: '/sign-in' };
     await setSessionCookie(session.token, session.expiresAt);
     const current = await validateSession(session.token);
     return { to: current ? await homePathFor(current.user) : '/sign-in' };

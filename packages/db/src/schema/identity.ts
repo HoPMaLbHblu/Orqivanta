@@ -31,6 +31,13 @@ export const users = pgTable(
     isDemo: boolean('is_demo').notNull().default(false),
     isPlatformAdmin: boolean('is_platform_admin').notNull().default(false),
     lastActiveOrgId: uuid('last_active_org_id'),
+    /** Authenticator-app secret (base32). Set during setup; two-factor is on once totpEnabledAt is set. */
+    totpSecret: text('totp_secret'),
+    totpEnabledAt: ts('totp_enabled_at'),
+    /** Last accepted 30-second step, so a code can't be used twice. */
+    totpLastStep: integer('totp_last_step'),
+    /** sha256 of each unused recovery code. */
+    recoveryCodeHashes: text('recovery_code_hashes').array().notNull().default(sql`'{}'::text[]`),
     createdAt: createdAt(),
     updatedAt: updatedAt(),
   },
@@ -55,7 +62,7 @@ export const sessions = pgTable(
   (t) => [uniqueIndex('sessions_token_hash_key').on(t.tokenHash), index('sessions_user_idx').on(t.userId)],
 );
 
-export const emailTokenPurpose = pgEnum('email_token_purpose', ['verify_email', 'reset_password']);
+export const emailTokenPurpose = pgEnum('email_token_purpose', ['verify_email', 'reset_password', 'mfa_challenge']);
 
 export const emailTokens = pgTable(
   'email_tokens',

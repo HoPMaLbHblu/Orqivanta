@@ -9,6 +9,7 @@ import { queueEmail } from '../mail/send';
 import type { Locale } from '../mail/templates';
 import { hashPassword, verifyPassword } from './password';
 import { createSession, revokeOtherSessions } from './sessions';
+import { issueTwoFactorChallenge } from './two-factor';
 
 const AVATAR_COLORS = ['verdigris', 'amber', 'plum', 'slate', 'clay', 'moss', 'ocean', 'rose'];
 export const pickAvatarColor = (seed: string) =>
@@ -146,7 +147,8 @@ export const signInSchema = z.object({
 
 export type SignInResult =
   | { status: 'ok'; token: string; expiresAt: Date; userId: string; lastActiveOrgId: string | null }
-  | { status: 'unverified'; email: string };
+  | { status: 'unverified'; email: string }
+  | { status: 'two_factor'; challenge: string };
 
 /** Signs in with email and password. Wrong email and wrong password give the same error. */
 export async function signIn(
@@ -167,6 +169,7 @@ export async function signIn(
     await resendVerification(user.email).catch(() => undefined);
     return { status: 'unverified', email: user.email };
   }
+  if (user.totpEnabledAt) return { status: 'two_factor', challenge: await issueTwoFactorChallenge(user.id) };
   const session = await createSession(user.id, meta);
   return { status: 'ok', ...session, userId: user.id, lastActiveOrgId: user.lastActiveOrgId };
 }
@@ -239,6 +242,9 @@ export async function resetPassword(
   });
   if (!userId) throw new AppError('PRECONDITION', 'This reset link is invalid or has expired. Request a new one.');
   await revokeOtherSessions(userId, null);
+  // A reset link proves the inbox, not the second factor: with two-factor on, sign in normally next.
+  const [u] = await withSystem((tx) => tx.select({ totpEnabledAt: users.totpEnabledAt }).from(users).where(eq(users.id, userId)));
+  if (u?.totpEnabledAt) return null;
   return createSession(userId, meta);
 }
 

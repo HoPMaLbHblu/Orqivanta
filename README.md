@@ -19,6 +19,7 @@ with a focused portal where clients send requests and sign off on exact versions
 | Client portal | Requests, reviews, deliverables and updates — only items explicitly shared with that client account |
 | Notifications & search | In-app inbox, email, per-category preferences, live updates over SSE, permission-aware full-text search and ⌘K palette |
 | Reports | Progress, overdue work, throughput, cycle time, request response and approval turnaround — each with a table, a written definition and CSV export |
+| Accounts & security | Email verification, password reset, active sessions, two-factor sign-in with an authenticator app and single-use recovery codes |
 | Admin | Members, invitations, teams, clients, request forms, labels, audit log, data export, trash |
 | i18n & a11y | English and Russian; light and dark themes; WCAG 2.2 AA target checked with axe |
 

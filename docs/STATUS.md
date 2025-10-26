@@ -29,5 +29,5 @@
 
 ## Not in release 1
 
-Billing, AI features, SSO and MFA, Slack/GitHub/calendar integrations, time tracking and
+Billing, AI features, SSO, Slack/GitHub/calendar integrations, time tracking and
 budgets, live co-editing, custom roles, public request forms, custom domains.
