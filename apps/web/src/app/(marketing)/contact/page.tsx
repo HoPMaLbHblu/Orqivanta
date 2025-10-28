@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AuthorLinks } from '@/components/marketing/author-links';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { ContactForm } from '@/components/marketing/contact-form';
@@ -43,6 +44,11 @@ export default async function ContactPage() {
             </div>
           ))}
         </dl>
+        <div className="border-t border-line py-5">
+          <h2 className="text-[15px] font-medium text-ink">{t('authorTitle')}</h2>
+          <p className="mt-1.5 max-w-[50ch] text-[14px] leading-[1.65] text-ink-2">{t('authorBody')}</p>
+          <AuthorLinks className="mt-3" showHandles />
+        </div>
       </div>
       <ContactForm />
     </Container>

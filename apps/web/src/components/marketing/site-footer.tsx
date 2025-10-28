@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Logo } from '@/components/brand';
 import { PreferenceSwitcher } from '@/components/preference-switcher';
+import { AuthorLinks } from './author-links';
 import { Container } from './typography';
 
 /** Every public page, the preference switcher, and an honest note about what this is. */
@@ -49,6 +50,7 @@ export async function SiteFooter({ demoEnabled }: { demoEnabled: boolean }) {
           <div>
             <Logo />
             <p className="mt-4 max-w-[34ch] text-[14px] leading-relaxed text-ink-2">{t('footer.tagline')}</p>
+            <AuthorLinks className="mt-5" />
           </div>
           <nav aria-label={t('footer.productTitle')} className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
             {columns.map((col) => (

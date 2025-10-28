@@ -532,7 +532,9 @@
     "send": "Send message",
     "sentTitle": "Thanks — your message is in.",
     "sentBody": "If it needs a reply, it will go to {email}.",
-    "sendAnother": "Send another message"
+    "sendAnother": "Send another message",
+    "authorTitle": "Talk to the author",
+    "authorBody": "Orqivanta is built by one person. For a quick question or to talk about work, reach me directly."
   },
   "accessibility": {
     "metaTitle": "Accessibility",
@@ -566,5 +568,9 @@
     "reportTitle": "Report a problem",
     "reportBody": "If something gets in your way, tell us through the <link>contact form</link> and choose “Accessibility”. Say which page, what you were trying to do, and which browser and assistive technology you use. Accessibility problems are treated as bugs, not requests."
   },
-  "seeProduct": "See the whole product"
+  "seeProduct": "See the whole product",
+  "author": {
+    "github": "GitHub: {handle}",
+    "telegram": "Telegram: {handle}"
+  }
 }
