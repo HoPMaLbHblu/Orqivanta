@@ -1,11 +1,45 @@
+<div align="center">
+
+<img src="apps/web/src/app/icon.svg" width="56" height="56" alt="" />
+
 # Orqivanta
 
-A collaboration workspace for studios and agencies and the clients they work for:
-projects, tasks, documents, files, client requests, approvals and reports in one place,
-with a focused portal where clients send requests and sign off on exact versions.
+**Client work, without the chasing.**
 
-> Orqivanta is a portfolio project. The sample studio (“Northwind Studio”) and everyone in
-> it are fictional, and the product says so wherever that data appears.
+A collaboration workspace for studios and agencies and the clients they work for: projects, tasks,
+documents, files, client requests, approvals and reports in one calm place, with a focused portal
+where clients send requests and sign off on exact versions.
+
+[![CI](https://github.com/HoPMaLbHblu/Orqivanta/actions/workflows/ci.yml/badge.svg)](https://github.com/HoPMaLbHblu/Orqivanta/actions/workflows/ci.yml)
+![Next.js 15](https://img.shields.io/badge/Next.js-15-black)
+![PostgreSQL 16](https://img.shields.io/badge/PostgreSQL-16-336791)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)
+![i18n](https://img.shields.io/badge/i18n-EN%20%7C%20RU-0f6e5f)
+![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey)
+
+<img src="docs/screenshots/workspace-home.png" alt="The Orqivanta workspace home: assigned work, recent activity and project health" width="100%" />
+
+</div>
+
+> Orqivanta is a portfolio project. The sample studio (“Northwind Studio”) and everyone in it are
+> fictional, and the product labels that data wherever it appears. There are no fake charts, no
+> simulated integrations and no buttons that do nothing.
+
+## Screenshots
+
+| | |
+| --- | --- |
+| <img src="docs/screenshots/project-overview.png" alt="Project overview with milestones, progress and members" /> **Project overview**: goals, milestones, health updates and progress you can trace back to tasks. | <img src="docs/screenshots/task-board.png" alt="Task board with backlog, to do, in progress and review columns" /> **Task board**: drag and drop with a full keyboard path, plus list view, filters and saved views. |
+| <img src="docs/screenshots/task-detail.png" alt="Task detail with description, checklist, comments and history" /> **Task detail**: subtasks, checklists, dependencies, watchers, comments and field history. | <img src="docs/screenshots/document-editor.png" alt="Rich-text document editor with version number" /> **Documents**: rich text with autosave, version history and a conflict dialog instead of silent overwrites. |
+| <img src="docs/screenshots/approval.png" alt="Approval pinned to an exact file version with reviewer decisions" /> **Approvals**: pinned to an exact file or document version; a new version opens a new round. | <img src="docs/screenshots/requests-triage.png" alt="Client request triage queue" /> **Requests**: typed intake forms, a triage queue, clarification threads and one-click conversion to tasks. |
+| <img src="docs/screenshots/client-portal.png" alt="Client portal home for Harbor & Pine" /> **Client portal**: clients see only what was shared with them, send requests and review work. | <img src="docs/screenshots/reports-dark.png" alt="Reports overview in dark theme" /> **Reports** (dark theme): six reports, each with a table, a written definition and CSV export. |
+| <img src="docs/screenshots/workspace-ru.png" alt="Project overview in Russian" /> **English and Russian** throughout, including server messages and email. | <img src="docs/screenshots/two-factor.png" alt="Account security with two-factor sign-in" /> **Account security**: sessions, password changes and two-factor sign-in with recovery codes. |
+
+<p align="center">
+  <img src="docs/screenshots/mobile-my-work.png" alt="My work on a phone" width="260" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/marketing-home.png" alt="Public marketing site" width="560" />
+</p>
 
 ## What’s inside
 
@@ -25,13 +59,28 @@ with a focused portal where clients send requests and sign off on exact versions
 
 ## Stack
 
-- **Web:** Next.js 15 (App Router, server actions), React 19, Tailwind CSS 4, Radix primitives, next-intl
+- **Web:** Next.js 15 (App Router, server actions), React 19, Tailwind CSS 4, Radix primitives, Tiptap, next-intl
 - **Data:** PostgreSQL 16 with row-level security on every tenant table, Drizzle ORM, zod
 - **Background work:** a transactional outbox drained by a small worker (`LISTEN/NOTIFY` + polling), plus scheduled reminders and cleanup
 - **Live updates:** Server-Sent Events fed by `pg_notify`, with replay after a reconnect
+- **Security:** argon2id passwords, hashed session and email tokens, TOTP two-factor sign-in, rate limits, strict tenant isolation enforced by the database
 - **Tests:** Vitest integration tests against a real database (permissions, tenant isolation, workflows) and Playwright + axe end-to-end tests
 
 Everything runs locally and for free: no paid services are needed.
+
+## How it fits together
+
+```mermaid
+flowchart LR
+  Browser -- "pages, server actions" --> Web["apps/web<br/>Next.js"]
+  Browser -- "SSE live updates" --> Web
+  Web -- "core services" --> Core["packages/core<br/>domain logic, permissions"]
+  Core -- "withTenant (RLS)" --> DB[("PostgreSQL 16")]
+  Core -- "outbox rows" --> DB
+  Worker["apps/worker"] -- "drains outbox" --> DB
+  Worker --> Mail["Email (SMTP / log)"]
+  DB -- "pg_notify" --> Web
+```
 
 ## Repository layout
 
@@ -41,8 +90,24 @@ apps/worker     Outbox delivery (email, notifications), reminders and cleanup jo
 packages/core   Domain services, permissions, validation, email templates, demo seed
 packages/db     Drizzle schema, SQL migrations and RLS policies
 infra/postgres  Database roles for local development and CI
-docs/           Architecture notes and project status
+docs/           Architecture notes, project status and screenshots
 ```
+
+## Demo accounts
+
+Every account uses the password `orqivanta-demo`, or open `/demo` and pick a role.
+
+| Email | Who | Role |
+| --- | --- | --- |
+| `maya@northwind.example` | Maya Okafor, studio director | Owner |
+| `priya@northwind.example` | Priya Shah, producer | Admin |
+| `leo@northwind.example` | Leo Martins, designer | Member |
+| `sam@northwind.example` | Sam Ito, developer | Member |
+| `nadia@northwind.example` | Nadia Petrova, content strategist | Member |
+| `tomas@northwind.example` | Tomás Rivera, developer | Member |
+| `hannah@harborpine.example` | Hannah Cole, Harbor & Pine | Client (portal) |
+| `marcus@harborpine.example` | Marcus Lee, Harbor & Pine | Client (portal) |
+| `ruth@lumenhealth.example` | Ruth Alvarez, Lumen Health | Client (portal) |
 
 ## Running it locally
 
@@ -108,3 +173,15 @@ log and `/dev/mailbox`, and uploads live on temporary disk until the next reset.
 See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for how tenancy, permissions, files,
 real-time updates and background jobs fit together, and [`docs/STATUS.md`](docs/STATUS.md)
 for what is in this release and what deliberately isn’t.
+
+
+## Author
+
+Built by **HoPMaLbHblu**.
+
+- GitHub: [@HoPMaLbHblu](https://github.com/HoPMaLbHblu)
+- Telegram: [@ny_da_ny_daaa](https://t.me/ny_da_ny_daaa)
+
+## License
+
+[MIT](LICENSE)

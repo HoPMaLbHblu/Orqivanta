@@ -1,0 +1,15 @@
+name: Feature idea
+description: Suggest something Orqivanta should do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation and who it’s for (studio team, client, admin).
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
