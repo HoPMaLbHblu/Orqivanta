@@ -70,17 +70,10 @@ Everything runs locally and for free: no paid services are needed.
 
 ## How it fits together
 
-```mermaid
-flowchart LR
-  Browser -- "pages, server actions" --> Web["apps/web<br/>Next.js"]
-  Browser -- "SSE live updates" --> Web
-  Web -- "core services" --> Core["packages/core<br/>domain logic, permissions"]
-  Core -- "withTenant (RLS)" --> DB[("PostgreSQL 16")]
-  Core -- "outbox rows" --> DB
-  Worker["apps/worker"] -- "drains outbox" --> DB
-  Worker --> Mail["Email (SMTP / log)"]
-  DB -- "pg_notify" --> Web
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagrams/architecture-dark.svg" />
+  <img src="docs/diagrams/architecture-light.svg" alt="Browser talks to apps/web (Next.js) for pages and actions and gets live updates over SSE. apps/web calls packages/core, which queries PostgreSQL under row-level security. apps/worker drains the outbox in PostgreSQL and sends email. PostgreSQL notifies apps/web through pg_notify." width="100%" />
+</picture>
 
 ## Repository layout
 
