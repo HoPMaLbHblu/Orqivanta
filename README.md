@@ -25,6 +25,12 @@ where clients send requests and sign off on exact versions.
 > fictional, and the product labels that data wherever it appears. There are no fake charts, no
 > simulated integrations and no buttons that do nothing.
 
+> [!NOTE]
+> **The first visit is slow, later ones are fast.** The hosted demo runs on a free server that
+> sleeps when nobody is using it, so the first request can take up to a minute while it wakes up.
+> Locally, `pnpm dev` compiles each page the first time you open it. After that, scripts, styles and
+> fonts are cached by your browser and pages you have just visited open instantly.
+
 ## Screenshots
 
 | | |
